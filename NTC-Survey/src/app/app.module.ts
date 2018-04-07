@@ -8,15 +8,18 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewJourneyPage } from '../pages/new-journey/new-journey';
 import { NewBusHaltPage } from '../pages/new-bus-halt/new-bus-halt';
+import { GetDownPage } from '../pages/get-down/get-down';
 import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
+import {Geolocation} from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     NewJourneyPage,
-    NewBusHaltPage
+    NewBusHaltPage,
+    GetDownPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import {Toast} from '@ionic-native/toast';
     MyApp,
     HomePage,
     NewJourneyPage,
-    NewBusHaltPage
+    NewBusHaltPage,
+    GetDownPage
   ],
   providers: [
     StatusBar,
@@ -35,6 +39,7 @@ import {Toast} from '@ionic-native/toast';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SQLite,
     Toast,
+    Geolocation,
   ]
 })
 export class AppModule {}

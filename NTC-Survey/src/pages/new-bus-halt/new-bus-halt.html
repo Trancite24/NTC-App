@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>NewBusHalt</ion-title>
+    <ion-title>නව බස් නැවතුම</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -30,4 +30,21 @@
       </ion-item>
     </ion-item-sliding>
   </ion-list>-->
+
+  <ion-row justify-content-center align-items-center style="height: 20%">
+    <br><br><br><br>
+    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()">GPS ඛණ්ඩාංක ගන්න</button>
+    <div *ngIf="location">
+      <h2>Your location is:</h2>
+      <p>Lon: {{ location.longitude }}</p>
+      <p>Lat: {{ location.latitude }}</p>
+    </div>
+  </ion-row>
+
+  <ion-row justify-content-end align-items-end style="height: 80%">
+    <button  class="button button-dark customBtnEnd" ion-button round>ගමන අවසන් කරන්න</button>
+  </ion-row>
+
+
 </ion-content>
+

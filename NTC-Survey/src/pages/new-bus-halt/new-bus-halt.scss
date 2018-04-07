@@ -1,3 +1,19 @@
 page-new-bus-halt {
+  .button.customBtnGPS{
+    width:100%;
+    height: 100%;
+
+  }
+  .button.customBtnEnd{
+    width:100%;
+    height: 10%;
+
+  }
+  ion-content .scroll-content {
+    overflow-y: hidden;
+  }
+  .scroll-content {
+    overflow: hidden;
+  }
 
 }

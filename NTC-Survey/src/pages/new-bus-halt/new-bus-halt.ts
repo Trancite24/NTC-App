@@ -1,8 +1,14 @@
+import {Platform} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {LoadingController} from 'ionic-angular';
 
 import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
+import { Geolocation } from '@ionic-native/geolocation';
+import {GetDownPage} from '../get-down/get-down';
+import {async} from "rxjs/scheduler/async";
+
 
 /**
  * Generated class for the NewBusHaltPage page.
@@ -18,20 +24,55 @@ import {Toast} from '@ionic-native/toast';
 })
 export class NewBusHaltPage {
 
+  location: any = { longitude: 0.0, latitude: 0.0};
   journies: any = [];
-  journeyId :string;
+  journeyId: string;
 
   constructor(
+    public platform: Platform,
+    public loadingCtrl: LoadingController,
     public navCtrl: NavController,
     public navParams: NavParams,
     private sqlite: SQLite,
-    private toast: Toast
+    private toast: Toast,
+    private geoLocation: Geolocation
   ) {
     this.journeyId = this.navParams.get('journeyId');
   }
 
   ionViewDidLoad() {
     // this.loadDb();
+  }
+
+  async getGoeLocation() {
+    let loader = this.loadingCtrl.create({
+      content: "GPS දත්ත ලබාගනිමින් සිටී..",
+    });
+    loader.present();
+    await this.platform.ready();
+    await this.geoLocation.getCurrentPosition({timeout: 60000}).then(async (res) => {
+      this.location.longitude = res.coords.longitude;
+      this.location.latitude = res.coords.latitude;
+      loader.dismiss();
+      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි' + this.location.latitude, '5000', 'center').subscribe(
+        (toast) => {
+          this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
+        }
+      );
+
+
+    }).catch(async (err) => {
+      loader.dismiss();
+      await this.toast.show('දත්ත ලබාගැනීම අසාර්ථකයි,\n' +
+        'GPS දත්ත නොමැතිව ඉදිරියට යෑම', '5000', 'center').subscribe(
+        (toast) => {
+          this.navCtrl.push(GetDownPage, {journeyId: this.journeyId,location: this.location});
+        }
+      );
+
+
+    });
+
   }
 
   /*loadDb() {

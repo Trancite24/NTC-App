@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NewBusHaltPage } from "../pages/new-bus-halt/new-bus-halt";
 
 import { HomePage } from '../pages/home/home';
 @Component({
