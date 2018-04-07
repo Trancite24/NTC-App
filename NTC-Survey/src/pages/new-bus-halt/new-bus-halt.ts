@@ -54,11 +54,14 @@ export class NewBusHaltPage {
       this.location.longitude = res.coords.longitude;
       this.location.latitude = res.coords.latitude;
       loader.dismiss();
-      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි' + this.location.latitude, '5000', 'center').subscribe(
+      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි' + this.location.latitude, '3000', 'center').subscribe(
         (toast) => {
-          this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
+
         }
       );
+      setTimeout( () => {
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
+      },3500);
 
 
     }).catch(async (err) => {
@@ -66,9 +69,12 @@ export class NewBusHaltPage {
       await this.toast.show('දත්ත ලබාගැනීම අසාර්ථකයි,\n' +
         'GPS දත්ත නොමැතිව ඉදිරියට යෑම', '5000', 'center').subscribe(
         (toast) => {
-          this.navCtrl.push(GetDownPage, {journeyId: this.journeyId,location: this.location});
+
         }
       );
+      setTimeout( () => {
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId,location: this.location});
+      }, 5000);
 
 
     });

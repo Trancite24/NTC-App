@@ -12,6 +12,7 @@ import { GetDownPage } from '../pages/get-down/get-down';
 import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Geolocation} from '@ionic-native/geolocation';
+import { Vibration } from '@ionic-native/vibration';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {Geolocation} from '@ionic-native/geolocation';
     SQLite,
     Toast,
     Geolocation,
+    Vibration
   ]
 })
 export class AppModule {}
