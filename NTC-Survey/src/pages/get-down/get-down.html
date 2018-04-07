@@ -14,73 +14,96 @@
 
 
 <ion-content padding>
-  <ion-grid style="height: 80%" ion-fixed>
-    <ion-row text-center justify-content-center align-items-center style="height: 25%">
+  <ion-grid style="height: 100%" ion-fixed>
+    <ion-row text-center justify-content-center align-items-center style="height: 20%">
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/male-child.jpg" (click)="countUp()"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/male-child.jpg" (click)="countUp('malechild')"
+                 (swipe)="countDown('malechild')"></ion-img>
 
 
       </ion-col>
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.femalechild}} [(ngModel)]="outData.femalechild"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/female-child.jpg"></ion-img>
-      </ion-col>
-    </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 25%">
-      <ion-col style="height: 100%">
-        <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
-
-        </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/male-young.jpg"></ion-img>
-      </ion-col>
-      <ion-col style="height: 100%">
-        <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
-
-        </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/female-young.jpg"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/female-child.jpg" (click)="countUp('femalechild')"
+                 (swipe)="countDown('femalechild')"></ion-img>
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 25%">
+    <ion-row text-center justify-content-center align-items-center style="height: 20%">
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.maleyoung}} [(ngModel)]="outData.maleyoung"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/male-man.jpg"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/male-young.jpg" (click)="countUp('maleyoung')"
+                 (swipe)="countDown('maleyoung')"></ion-img>
       </ion-col>
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.femaleyoung}} [(ngModel)]="outData.femaleyoung"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/female-woman.jpg"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/female-young.jpg" (click)="countUp('femaleyoung')"
+                 (swipe)="countDown('femaleyoung')"></ion-img>
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 25%">
+    <ion-row text-center justify-content-center align-items-center style="height: 20%">
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.maleman}} [(ngModel)]="outData.maleman"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/male-elder.jpg"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/male-man.jpg" (click)="countUp('maleman')"
+                 (swipe)="countDown('maleman')"></ion-img>
       </ion-col>
       <ion-col style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 20%">
-          <ion-input text-center type="number" placeholder={{outData.malechild}} [(ngModel)]="outData.malechild" required=""></ion-input>
+          <ion-input text-center type="number" placeholder={{outData.femalewoman}} [(ngModel)]="outData.femalewoman"
+                     required=""></ion-input>
 
         </ion-row>
-        <ion-img width="50%" height="80%" src="assets/imgs/female-elder.jpg"></ion-img>
+        <ion-img width="50%" height="80%" src="assets/imgs/female-woman.jpg" (click)="countUp('femalewoman')"
+                 (swipe)="countDown('femalewoman')"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center justify-content-center align-items-center style="height: 20%">
+      <ion-col style="height: 100%">
+        <ion-row text-center justify-content-center align-items-center style="height: 20%">
+          <ion-input text-center type="number" placeholder={{outData.maleelder}} [(ngModel)]="outData.maleelder"
+                     required=""></ion-input>
+
+        </ion-row>
+        <ion-img width="50%" height="80%" src="assets/imgs/male-elder.jpg" (click)="countUp('maleelder')"
+                 (swipe)="countDown('maleelder')"></ion-img>
+      </ion-col>
+      <ion-col style="height: 100%">
+        <ion-row text-center justify-content-center align-items-center style="height: 20%">
+          <ion-input text-center type="number" placeholder={{outData.femaleelder}} [(ngModel)]="outData.femaleelder"
+                     required=""></ion-input>
+
+        </ion-row>
+        <ion-img width="50%" height="80%" src="assets/imgs/female-elder.jpg" (click)="countUp('femaleelder')"
+                 (swipe)="countDown('femaleelder')"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center justify-content-center align-items-center style="height: 20%">
+      <ion-col>
+        test
+      </ion-col>
+      <ion-col>
+        test
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
