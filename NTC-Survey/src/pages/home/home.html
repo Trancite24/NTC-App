@@ -1,14 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>ඇතුළු වීම</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <form (ngSubmit)="login(nicInput.value,pwinput.value)">
+      <ion-item>
+        <ion-label floating>හැදුනුම්පත් අංකය (NIC)</ion-label>
+        <ion-input #nicInput type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>මුරපදය</ion-label>
+        <ion-input #pwinput type="password"></ion-input>
+      </ion-item>
+        <br><br>
+        <button ion-button block large type="submit" color="secondary">
+          <span><b>ඇතුල් වන්න</b></span></button>
+      </form>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

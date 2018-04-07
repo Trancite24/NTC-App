@@ -1,0 +1,57 @@
+<ion-content padding no-bounce>
+
+  <ion-grid style="height: 100%">
+    <h2>අළුත් චාරිකාවක්</h2>
+    <ion-row justify-content-center align-items-center style="height: 100%">
+
+      <br><br><br>
+      <form (ngSubmit)="insertJourneyDetails()">
+        <ion-item>
+          <ion-label>දිනය</ion-label>
+          <!--<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>-->
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label><h2>මාර්ග අංකය</h2></ion-label>
+          <!-- <ion-select [(ngModel)]="data.type" name="type" required="">-->
+          <!--<ion-select  name="type" required="">
+          <ion-option value="Income">Income</ion-option>
+          <ion-option value="Expense">Expense</ion-option>-->
+          <!--
+           </ion-select>-->
+          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo"  name="amount" required=""></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>මාර්ගයේ නම</ion-label>
+          <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
+          <ion-input type="text" placeholder="" [(ngModel)]="data.routeName" name="description" required=""></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>දිශාව</ion-label>
+          <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
+          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.heading" name="description" required=""></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>දොර</ion-label>
+          <ion-select [(ngModel)]="data.door" name="type" required="">
+            <ion-option value="front">ඉදිරිපස</ion-option>
+            <ion-option value="back">පසුපස</ion-option>
+            <ion-option value="middle">මැද</ion-option>
+
+          </ion-select>
+        </ion-item>
+
+        <br><br><br><br>
+        <button ion-button type="submit" block large color="secondary"><b>ගමන අරඹන්න</b></button>
+
+
+      </form>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
