@@ -3,17 +3,19 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { NgSwitch } from '@angular/common';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewJourneyPage } from '../pages/new-journey/new-journey';
 import { NewBusHaltPage } from '../pages/new-bus-halt/new-bus-halt';
 import { GetDownPage } from '../pages/get-down/get-down';
+import { EndBusHaltPage } from '../pages/end-bus-halt/end-bus-halt';
 import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Vibration } from '@ionic-native/vibration';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { Vibration } from '@ionic-native/vibration';
     HomePage,
     NewJourneyPage,
     NewBusHaltPage,
-    GetDownPage
+    GetDownPage,
+    EndBusHaltPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { Vibration } from '@ionic-native/vibration';
     HomePage,
     NewJourneyPage,
     NewBusHaltPage,
-    GetDownPage
+    GetDownPage,
+    EndBusHaltPage
   ],
   providers: [
     StatusBar,
@@ -42,8 +46,7 @@ import { Vibration } from '@ionic-native/vibration';
     SQLite,
     Toast,
     Geolocation,
-    Vibration,
-    NgSwitch
+    Vibration
   ]
 })
 export class AppModule {}

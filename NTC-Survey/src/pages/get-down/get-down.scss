@@ -1,4 +1,27 @@
 page-get-down {
 
+  .age-group-content {
 
+  }
+  .age-group-images {
+    border-radius: 10px;
+    width: 50%;
+    height: 80%;
+  }
+  .count-text {
+    font-size: 130%;
+    font-family: 'AvenirNextLTPro-Regular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .total-count {
+    font-size: 100%;
+    font-family: 'AvenirNextLTPro-Regular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  ion-content .scroll-content {
+    overflow-y: hidden;
+  }
+  .scroll-content {
+    overflow: hidden;
+  }
 }

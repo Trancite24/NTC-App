@@ -1,9 +1,13 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import { Platform } from 'ionic-angular';
+import {Platform} from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import {Toast} from '@ionic-native/toast';
 import {Vibration} from '@ionic-native/vibration';
+
+import { EndBusHaltPage } from '../end-bus-halt/end-bus-halt';
+
 
 /**
  * Generated class for the GetDownPage page.
@@ -41,9 +45,20 @@ export class GetDownPage {
     femalewoman: 0,
     femaleelder: 0
   };
+  outTotal: number;
+  inTotal: number;
   status: string = "out";
   isAndroid: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toast: Toast, private vibration: Vibration,platform: Platform) {
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    public toast: Toast,
+    private vibration: Vibration,
+
+    platform: Platform
+  ) {
 
     this.isAndroid = platform.is('android');
   }
@@ -60,8 +75,9 @@ export class GetDownPage {
     this.location = this.navParams.get('location');
   }
 
-  countUp(status : string,ageCategory: string) {
+  countUp(status: string, ageCategory: string) {
     if (status === 'out') {
+
       switch (ageCategory) {
         case 'malechild' :
           this.outData.malechild++;
@@ -87,9 +103,14 @@ export class GetDownPage {
         case 'femaleelder' :
           this.outData.femaleelder++;
           break;
+
+
       }
+      this.outTotalCalc();
+
     }
     else {
+
       switch (ageCategory) {
         case 'malechild' :
           this.inData.malechild++;
@@ -116,76 +137,164 @@ export class GetDownPage {
           this.inData.femaleelder++;
           break;
       }
+      this.inTotalCalc();
 
 
     }
   }
 
-  countDown(status:string,ageCategory: string) {
-    if(status === 'out'){
+  countDown(status: string, ageCategory: string) {
+    if (status === 'out') {
 
 
-    switch (ageCategory) {
-      case 'malechild' :
-        if (this.outData.malechild > 0) {this.outData.malechild --; this.vibratePhone(20)}
-        break;
-      case 'maleyoung' :
-        if (this.outData.maleyoung > 0) {this.outData.maleyoung --; this.vibratePhone(20)}
-        break;
-      case 'maleman' :
-        if (this.outData.maleman > 0) {this.outData.maleman --; this.vibratePhone(20)}
-        break;
-      case 'maleelder' :
-        if (this.outData.maleelder > 0) {this.outData.maleelder --; this.vibratePhone(20)}
-        break;
-      case 'femalechild' :
-        if (this.outData.femalechild > 0) {this.outData.femalechild --; this.vibratePhone(20)}
-        break;
-      case 'femaleyoung' :
-        if (this.outData.femaleyoung > 0) {this.outData.femaleyoung --; this.vibratePhone(20)}
-        break;
-      case 'femalewoman' :
-        if (this.outData.femalewoman > 0) {this.outData.femalewoman --; this.vibratePhone(20)}
-        break;
-      case 'femaleelder' :
-        if (this.outData.femaleelder > 0) {this.outData.femaleelder --; this.vibratePhone(20)}
-        break;
-    }
-    }
-    else{
       switch (ageCategory) {
         case 'malechild' :
-          if (this.inData.malechild > 0) {this.inData.malechild --; this.vibratePhone(20)}
+          if (this.outData.malechild > 0) {
+            this.outData.malechild--;
+            this.vibratePhone(20)
+          }
           break;
         case 'maleyoung' :
-          if (this.inData.maleyoung > 0) {this.inData.maleyoung --; this.vibratePhone(20)}
+          if (this.outData.maleyoung > 0) {
+            this.outData.maleyoung--;
+            this.vibratePhone(20)
+          }
           break;
         case 'maleman' :
-          if (this.inData.maleman > 0) {this.inData.maleman --; this.vibratePhone(20)}
+          if (this.outData.maleman > 0) {
+            this.outData.maleman--;
+            this.vibratePhone(20)
+          }
           break;
         case 'maleelder' :
-          if (this.inData.maleelder > 0) {this.inData.maleelder --; this.vibratePhone(20)}
+          if (this.outData.maleelder > 0) {
+            this.outData.maleelder--;
+            this.vibratePhone(20)
+          }
           break;
         case 'femalechild' :
-          if (this.inData.femalechild > 0) {this.inData.femalechild --; this.vibratePhone(20)}
+          if (this.outData.femalechild > 0) {
+            this.outData.femalechild--;
+            this.vibratePhone(20)
+          }
           break;
         case 'femaleyoung' :
-          if (this.inData.femaleyoung > 0) {this.inData.femaleyoung --; this.vibratePhone(20)}
+          if (this.outData.femaleyoung > 0) {
+            this.outData.femaleyoung--;
+            this.vibratePhone(20)
+          }
           break;
         case 'femalewoman' :
-          if (this.inData.femalewoman > 0) {this.inData.femalewoman --; this.vibratePhone(20)}
+          if (this.outData.femalewoman > 0) {
+            this.outData.femalewoman--;
+            this.vibratePhone(20)
+          }
           break;
         case 'femaleelder' :
-          if (this.inData.femaleelder > 0) {this.inData.femaleelder --; this.vibratePhone(20)}
+          if (this.outData.femaleelder > 0) {
+            this.outData.femaleelder--;
+            this.vibratePhone(20)
+          }
           break;
       }
+      this.outTotalCalc();
+    }
+    else {
+
+      switch (ageCategory) {
+        case 'malechild' :
+          if (this.inData.malechild > 0) {
+            this.inData.malechild--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'maleyoung' :
+          if (this.inData.maleyoung > 0) {
+            this.inData.maleyoung--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'maleman' :
+          if (this.inData.maleman > 0) {
+            this.inData.maleman--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'maleelder' :
+          if (this.inData.maleelder > 0) {
+            this.inData.maleelder--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'femalechild' :
+          if (this.inData.femalechild > 0) {
+            this.inData.femalechild--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'femaleyoung' :
+          if (this.inData.femaleyoung > 0) {
+            this.inData.femaleyoung--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'femalewoman' :
+          if (this.inData.femalewoman > 0) {
+            this.inData.femalewoman--;
+            this.vibratePhone(20)
+          }
+          break;
+        case 'femaleelder' :
+          if (this.inData.femaleelder > 0) {
+            this.inData.femaleelder--;
+            this.vibratePhone(20)
+          }
+          break;
+      }
+      this.inTotalCalc();
     }
   }
 
 
-
-  vibratePhone(time: number){
+  vibratePhone(time: number) {
     this.vibration.vibrate(time);
+  }
+
+  outTotalCalc() {
+    this.outTotal = this.outData.malechild + this.outData.maleyoung + this.outData.maleman + this.outData.maleelder + this.outData.femalechild + this.outData.femaleyoung + this.outData.femalewoman + this.outData.femaleelder;
+  }
+
+  inTotalCalc() {
+    this.inTotal = this.inData.malechild + this.inData.maleyoung + this.inData.maleman + this.inData.maleelder + this.inData.femalechild + this.inData.femaleyoung + this.inData.femalewoman + this.inData.femaleelder;
+  }
+
+  dataEnterFinshed(){
+    let confirm = this.alertCtrl.create({
+      title: 'තහවුරු කරන්න',
+      message: 'ඇතුල්වීම් හා පිටවීම් දත්ත ඇතුලත් කිරීම අවසන්',
+      buttons: [
+        {
+          text: 'ආපසු',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'සනාථ කරන්න',
+          handler: () => {
+            this.navCtrl.push(EndBusHaltPage,{
+              journeyId: this.journeyId,
+              location: this.location,
+              outData: this.outData,
+              inData: this.inData,
+              outTotal: this.outTotal,
+              inTotal: this.inTotal
+            });
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }
