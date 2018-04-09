@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +19,7 @@ import {Toast} from '@ionic-native/toast';
 import {Keyboard} from '@ionic-native/keyboard';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Vibration } from '@ionic-native/vibration';
+import { SyncerProvider } from '../providers/syncer/syncer';
 
 
 @NgModule({
@@ -29,7 +33,8 @@ import { Vibration } from '@ionic-native/vibration';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{scrollAssist: false, autoFocusAssist: false})
+    IonicModule.forRoot(MyApp,{scrollAssist: false, autoFocusAssist: false}),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +53,9 @@ import { Vibration } from '@ionic-native/vibration';
     Toast,
     Geolocation,
     Vibration,
-    Keyboard
+    Keyboard,
+    SyncerProvider,
+    HttpClient,
   ]
 })
 export class AppModule {}
