@@ -13,6 +13,7 @@ import { GetDownPage } from '../pages/get-down/get-down';
 import { EndBusHaltPage } from '../pages/end-bus-halt/end-bus-halt';
 import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
+import {Keyboard} from '@ionic-native/keyboard';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Vibration } from '@ionic-native/vibration';
 
@@ -28,7 +29,7 @@ import { Vibration } from '@ionic-native/vibration';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{scrollAssist: false, autoFocusAssist: false})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +47,8 @@ import { Vibration } from '@ionic-native/vibration';
     SQLite,
     Toast,
     Geolocation,
-    Vibration
+    Vibration,
+    Keyboard
   ]
 })
 export class AppModule {}

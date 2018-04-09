@@ -27,6 +27,7 @@ export class NewBusHaltPage {
   location: any = { longitude: 0.0, latitude: 0.0};
   journies: any = [];
   journeyId: string;
+  testData: any;
 
   constructor(
     public platform: Platform,
@@ -41,7 +42,7 @@ export class NewBusHaltPage {
   }
 
   ionViewDidLoad() {
-    // this.loadDb();
+     this.loadDb();
   }
 
   async getGoeLocation() {
@@ -81,30 +82,18 @@ export class NewBusHaltPage {
 
   }
 
-  /*loadDb() {
+  loadDb() {
     this.sqlite.create({
       name: 'ionicdb.db',
       location: 'default'
     }).then(
       (db: SQLiteObject) => {
-        db.executeSql('SELECT * FROM journey', {})
+        db.executeSql('SELECT * FROM busstop', {})
           .then((res) => {
-            this.journies = [];
-            for (let i = 0; i < res.rows.length; i++) {
-              this.journies.push({
-                journeyId: res.rows.item(i).journeyId,
-                date: res.rows.item(i).date,
-                routeNo: res.rows.item(i).routeNo,
-                routeName: res.rows.item(i).routeName,
-                heading: res.rows.item(i).heading,
-                door: res.rows.item(i).door,
-                synced: res.rows.item(i).synced
-              })
-            }
+            this.testData = res.rows.item(0);
           })
           .catch(e => console.log(e));
       }
     );
   }
-*/
 }

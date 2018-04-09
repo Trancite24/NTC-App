@@ -5,14 +5,47 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>EndBusHalt</ion-title>
+    <ion-title>බස් නැවතුම</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
 
+  <form (ngSubmit)="finishClicked()" style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 40%">
+      <ion-item>
+        <ion-label>නම</ion-label>
+        <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
+        <ion-input text-right type="text" placeholder="" name="description" required=""></ion-input>
+      </ion-item>
+    </ion-row>
+    <br>
+    <ion-row padding justify-content-center align-items-center style="height: 20%">
+      <ion-col justify-content-center align-items-center style="height: 100%" col-4>
+        <div justify-content-center align-items-center class="route-no">
+          <ion-row ion-text color="primary" text-center>
+            මාර්ග අංකය
+          </ion-row>
+          <ion-row text-center justify-content-center align-items-center class="route-no-no">
+            <p ion-text color="danger"> {{routeNo}}</p>
+          </ion-row>
+          <br>
+        </div>
+      </ion-col>
+
+      <ion-col justify-content-center align-items-center style="height: 100%" col-6>
+        <br><br><br>
+        <h2 ion-text color="primary" text-right class="heading">
+          {{heading}} දෙසට
+
+        </h2>
+      </ion-col>
+    </ion-row>
+    <br><br><br><br>
+    <ion-row justify-content-center align-items-center style="height: 40%">
+      <button ion-button round full><b>දත්ත ඇතුලත් කරන්න</b></button>
+    </ion-row>
+  </form>
 </ion-content>
