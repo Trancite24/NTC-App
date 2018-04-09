@@ -49,6 +49,13 @@ functions:
                   method: post
                   path: insertintojourneytable
 
+  insertIntoBusStopTable :
+              handler: handler.insertIntoBusStopTable
+              events:
+                - http:
+                    method: post
+                    path: insertintobusstoptable
+
 resources:
   Resources:
 

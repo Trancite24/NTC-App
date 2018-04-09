@@ -14,8 +14,8 @@ export class SyncerProvider {
     console.log('Hello SyncerProvider Provider');
   }
 
-  syncNow(){
-
+  syncNowBusStop(data: any){
+    return this.http.post<any>('https://8yw1zzliak.execute-api.us-east-1.amazonaws.com/dev/insertintobusstoptable', data);
   }
 
   syncLater(){

@@ -50,6 +50,7 @@ export class EndBusHaltPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EndBusHaltPage');
+
     this.getRouteInfo();
   }
 
@@ -75,7 +76,7 @@ export class EndBusHaltPage {
   finishClicked() {
     this.inserDataToLocalDB();
     this.insertToLocalTable();
-    this.navCtrl.push(NewBusHaltPage);
+    this.navCtrl.push(NewBusHaltPage, { journeyId: this.journeyId });
   }
 
   inserDataToLocalDB() {

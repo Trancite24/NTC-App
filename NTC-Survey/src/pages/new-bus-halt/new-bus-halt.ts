@@ -5,10 +5,9 @@ import {LoadingController} from 'ionic-angular';
 
 import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
-import { Geolocation } from '@ionic-native/geolocation';
+import {Geolocation} from '@ionic-native/geolocation';
 import {GetDownPage} from '../get-down/get-down';
-import {async} from "rxjs/scheduler/async";
-
+import {SyncerProvider} from '../../providers/syncer/syncer';
 
 /**
  * Generated class for the NewBusHaltPage page.
@@ -24,10 +23,10 @@ import {async} from "rxjs/scheduler/async";
 })
 export class NewBusHaltPage {
 
-  location: any = { longitude: 0.0, latitude: 0.0};
+  location: any = {longitude: 0.0, latitude: 0.0};
   journies: any = [];
   journeyId: string;
-  testData: any;
+  testData: any = [];
 
   constructor(
     public platform: Platform,
@@ -36,13 +35,14 @@ export class NewBusHaltPage {
     public navParams: NavParams,
     private sqlite: SQLite,
     private toast: Toast,
-    private geoLocation: Geolocation
+    private geoLocation: Geolocation,
+    private syncer: SyncerProvider
   ) {
     this.journeyId = this.navParams.get('journeyId');
   }
 
   ionViewDidLoad() {
-     this.loadDb();
+    this.loadDb();
   }
 
   async getGoeLocation() {
@@ -60,9 +60,9 @@ export class NewBusHaltPage {
 
         }
       );
-      setTimeout( () => {
+      setTimeout(() => {
         this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
-      },3500);
+      }, 3500);
 
 
     }).catch(async (err) => {
@@ -73,8 +73,8 @@ export class NewBusHaltPage {
 
         }
       );
-      setTimeout( () => {
-        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId,location: this.location});
+      setTimeout(() => {
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
       }, 5000);
 
 
@@ -90,14 +90,32 @@ export class NewBusHaltPage {
       (db: SQLiteObject) => {
         db.executeSql('SELECT * FROM busstop', {})
           .then((res) => {
-            this.testData = res.rows.item(0);
+            for (let i = 0; i < res.rows.length; i++) {
+              this.testData.push(res.rows.item(i));
+            }
           })
           .catch(e => console.log(e));
       }
     );
   }
 
-  syncNow(){
+  syncNow() {
 
+    this.syncer.syncNowBusStop(this.testData).subscribe(
+      (res) => {
+        this.toast.show('සාර්ථකයි', '3000', 'center').subscribe(
+          (toast) => {
+
+          }
+        );
+      },
+      (err) => {
+        this.toast.show('in god we trust', '3000', 'center').subscribe(
+          (toast) => {
+
+          }
+        );
+      }
+    );
   }
 }

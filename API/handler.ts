@@ -193,30 +193,47 @@ export const insertIntoBusStopTable = async (event, context, callback) => {
         port: 3306,
         database: 'NTCSurvey',
     });
+    console.log(busStops);
+    for (let i = 0; i < busStops.length; i++) {
+    let busStop = busStops[i];
+    console.log(busStop);
 
-    busStops.forEach(
-        (busStop) => {
-            let sqlQuery = `INSERT INTO busstop (busstopId, journeyId, lat, lon, maleChildOut, maleYoungOut, maleManOut, maleElderOut, femaleChildOut, femaleYoungOut, femaleWomanOut, femaleElderOut, maleChildIn, maleYoungIn, maleManIn, maleElderIn, femaleChildIn, femaleYoungIn, femaleWomanIn, femaleElderIn, outTotal, inTotal)VALUES ('${busStop.busstopId}', '${busStop.journeyId}', '${busStop.lat}', '${busStop.lon}', '${busStop.maleChildOut}', '${busStop.maleYoungOut}', '${busStop.maleManOut}', '${busStop.maleElderOut}', '${busStop.femaleChildOut}', '${busStop.femaleYoungOut}', '${busStop.femaleWomanOut}', '${busStop.femaleElderOut}', '${busStop.maleChildIn}', '${busStop.maleYoungIn}', '${busStop.maleManIn}', '${busStop.maleElderIn}', '${busStop.femaleChildIn}', '${busStop.femaleYoungIn}', '${busStop.femaleWomanIn}', '${busStop.femaleElderIn}', '${busStop.outTotal}', '${busStop.inTotal}');`;
-            connection.query(sqlQuery, (error, results, fields) => {
-                if (error) {
-                    connection.destroy();
-                    callback(null, error);
-                } else {
+        let sqlQuery = `INSERT INTO busstop (busstopId, journeyId, lat, lon, maleChildOut, maleYoungOut, maleManOut, maleElderOut, femaleChildOut, femaleYoungOut, femaleWomanOut, femaleElderOut, maleChildIn, maleYoungIn, maleManIn, maleElderIn, femaleChildIn, femaleYoungIn, femaleWomanIn, femaleElderIn, outTotal, inTotal)VALUES ('${busStop.busstopId}', '${busStop.journeyId}', '${busStop.lat}', '${busStop.lon}', '${busStop.maleChildOut}', '${busStop.maleYoungOut}', '${busStop.maleManOut}', '${busStop.maleElderOut}', '${busStop.femaleChildOut}', '${busStop.femaleYoungOut}', '${busStop.femaleWomanOut}', '${busStop.femaleElderOut}', '${busStop.maleChildIn}', '${busStop.maleYoungIn}', '${busStop.maleManIn}', '${busStop.maleElderIn}', '${busStop.femaleChildIn}', '${busStop.femaleYoungIn}', '${busStop.femaleWomanIn}', '${busStop.femaleElderIn}', '${busStop.outTotal}', '${busStop.inTotal}');`;
+        connection.query(sqlQuery, (error, results, fields) => {
+            if (error) {
+                connection.destroy();
+                callback(null, error);
+            } else {
 
-                    console.log('Success!');
-                    results = results;
-                    console.log(results);
+                console.log('Success!');
+                console.log(results);
 
 
-                }
-            });
-        }
-    );
+            }
+        });
+    }
+    /* busStops.forEach(
+         (busStop) => {
+             let sqlQuery = `INSERT INTO busstop (busstopId, journeyId, lat, lon, maleChildOut, maleYoungOut, maleManOut, maleElderOut, femaleChildOut, femaleYoungOut, femaleWomanOut, femaleElderOut, maleChildIn, maleYoungIn, maleManIn, maleElderIn, femaleChildIn, femaleYoungIn, femaleWomanIn, femaleElderIn, outTotal, inTotal)VALUES ('${busStop.busstopId}', '${busStop.journeyId}', '${busStop.lat}', '${busStop.lon}', '${busStop.maleChildOut}', '${busStop.maleYoungOut}', '${busStop.maleManOut}', '${busStop.maleElderOut}', '${busStop.femaleChildOut}', '${busStop.femaleYoungOut}', '${busStop.femaleWomanOut}', '${busStop.femaleElderOut}', '${busStop.maleChildIn}', '${busStop.maleYoungIn}', '${busStop.maleManIn}', '${busStop.maleElderIn}', '${busStop.femaleChildIn}', '${busStop.femaleYoungIn}', '${busStop.femaleWomanIn}', '${busStop.femaleElderIn}', '${busStop.outTotal}', '${busStop.inTotal}');`;
+             connection.query(sqlQuery, (error, results, fields) => {
+                 if (error) {
+                     connection.destroy();
+                     callback(null, error);
+                 } else {
+
+                     console.log('Success!');
+                     console.log(results);
+
+
+                 }
+             });
+         }
+     );*/
 
     connection.end();
     const response = {
         statusCode: 200,
-        body: JSON.stringify({ message: 'inserted all'}),
+        body: JSON.stringify({message: 'inserted all'}),
     };
     callback(null, response);
 
