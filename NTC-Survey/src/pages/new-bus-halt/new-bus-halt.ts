@@ -145,6 +145,7 @@ export class NewBusHaltPage {
         this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි, ඔබට මෙම දත්ත පසුව ඇතුලත් කල හැකිය', '3000', 'center').subscribe(
           (toast) => {
 
+            
           }
         );
       }
