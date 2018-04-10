@@ -22,6 +22,7 @@ export class EndBusHaltPage {
 
   journeyId: string;
   location: any;
+  name: string;
   outData: any;
   inData: any;
   outTotal: any;
@@ -90,7 +91,7 @@ export class EndBusHaltPage {
         location: 'default'
       }
     ).then((db: SQLiteObject) => {
-      db.executeSql('CREATE TABLE IF NOT EXISTS busstop(busstopId TEXT PRIMARY KEY, journeyId TEXT, lat TEXT, lon TEXT, maleChildOut INTEGER DEFAULT 0, maleYoungOut INTEGER DEFAULT 0, maleManOut INTEGER DEFAULT 0, maleElderOut INTEGER DEFAULT 0, femaleChildOut INTEGER DEFAULT 0, femaleYoungOut INTEGER DEFAULT 0, femaleWomanOut INTEGER DEFAULT 0, femaleElderOut INTEGER DEFAULT 0, maleChildIn INTEGER DEFAULT 0, maleYoungIn INTEGER DEFAULT 0, maleManIn INTEGER DEFAULT 0, maleElderIn INTEGER DEFAULT 0, femaleChildIn INTEGER DEFAULT 0, femaleYoungIn INTEGER DEFAULT 0, femaleWomanIn INTEGER DEFAULT 0, femaleElderIn INTEGER DEFAULT 0, outTotal INTEGER DEFAULT 0, inTotal INTEGER DEFAULT 0)', {})
+      db.executeSql('CREATE TABLE IF NOT EXISTS busstop(busstopId TEXT PRIMARY KEY, journeyId TEXT, lat TEXT, lon TEXT, name TEXT, maleChildOut INTEGER DEFAULT 0, maleYoungOut INTEGER DEFAULT 0, maleManOut INTEGER DEFAULT 0, maleElderOut INTEGER DEFAULT 0, femaleChildOut INTEGER DEFAULT 0, femaleYoungOut INTEGER DEFAULT 0, femaleWomanOut INTEGER DEFAULT 0, femaleElderOut INTEGER DEFAULT 0, maleChildIn INTEGER DEFAULT 0, maleYoungIn INTEGER DEFAULT 0, maleManIn INTEGER DEFAULT 0, maleElderIn INTEGER DEFAULT 0, femaleChildIn INTEGER DEFAULT 0, femaleYoungIn INTEGER DEFAULT 0, femaleWomanIn INTEGER DEFAULT 0, femaleElderIn INTEGER DEFAULT 0, outTotal INTEGER DEFAULT 0, inTotal INTEGER DEFAULT 0, synced INTEGER DEFAULT 0)', {})
         .then((res) => {
           console.log('Executed SQL');
 
@@ -107,12 +108,13 @@ export class EndBusHaltPage {
       name: 'ionicdb.db',
       location: 'default'
     }).then( (db: SQLiteObject) => {
-      db.executeSql('INSERT INTO busstop VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+      db.executeSql('INSERT INTO busstop VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
         [
           busHaltId,
           this.journeyId,
           this.location.latitude,
           this.location.longitude,
+          this.name,
           this.outData.malechild,
           this.outData.maleyoung,
           this.outData.maleman,
@@ -130,7 +132,8 @@ export class EndBusHaltPage {
           this.inData.femalewoman,
           this.inData.femaleelder,
           this.outTotal,
-          this.inTotal
+          this.inTotal,
+          0
         ]
       )
         .then(res => {

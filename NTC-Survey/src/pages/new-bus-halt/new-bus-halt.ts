@@ -26,7 +26,8 @@ export class NewBusHaltPage {
   location: any = {longitude: 0.0, latitude: 0.0};
   journies: any = [];
   journeyId: string;
-  testData: any = [];
+  busStopData: any = [];
+  journey: any;
 
   constructor(
     public platform: Platform,
@@ -42,7 +43,8 @@ export class NewBusHaltPage {
   }
 
   ionViewDidLoad() {
-    this.loadDb();
+    this.loadBusStopDta();
+    this.loadJourneyData();
   }
 
   async getGoeLocation() {
@@ -82,16 +84,16 @@ export class NewBusHaltPage {
 
   }
 
-  loadDb() {
+  loadBusStopDta() {
     this.sqlite.create({
       name: 'ionicdb.db',
       location: 'default'
     }).then(
       (db: SQLiteObject) => {
-        db.executeSql('SELECT * FROM busstop', {})
+        db.executeSql('SELECT * FROM busstop WHERE journeyId=' + '\"' + this.journeyId + '\"' + 'AND synced=0', {})
           .then((res) => {
             for (let i = 0; i < res.rows.length; i++) {
-              this.testData.push(res.rows.item(i));
+              this.busStopData.push(res.rows.item(i));
             }
           })
           .catch(e => console.log(e));
@@ -99,23 +101,125 @@ export class NewBusHaltPage {
     );
   }
 
-  syncNow() {
+  loadJourneyData() {
+    this.sqlite.create({
+      name: 'ionicdb.db',
+      location: 'default'
+    }).then(
+      (db: SQLiteObject) => {
+        db.executeSql('SELECT * FROM journey WHERE journeyId=' + '\"' + this.journeyId + '\"' + 'AND synced=0', {})
+          .then((res) => {
+            if (res.rows.length > 0)
+              this.journey = res.rows.item(0);
+          })
+          .catch(e => console.log(e));
+      }
+    );
+  }
 
-    this.syncer.syncNowBusStop(this.testData).subscribe(
-      (res) => {
-        this.toast.show('සාර්ථකයි', '3000', 'center').subscribe(
-          (toast) => {
+  async syncNow() {
+    let loader = this.loadingCtrl.create({
+      content: "ප්‍රධාන පද්ධතිය සමග යාවත්කාලීන කිරීම සිදුවෙමින් පවතීී..",
+    });
+    loader.present();
+    await this.busStopRequest().then(
+      async (res) => {
+        await this.journeyRequest().then(
+          (resp) => {
+            this.toast.show('සාර්ථකයි!', '3000', 'center').subscribe(
+              (toast) => {
 
+              }
+            );
+          },
+          (error) => {
+            this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි, ඔබට මෙම දත්ත පසුව ඇතුලත් කල හැකිය', '3000', 'center').subscribe(
+              (toast) => {
+
+              }
+            );
           }
-        );
+        )
       },
       (err) => {
-        this.toast.show('in god we trust', '3000', 'center').subscribe(
+        this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි, ඔබට මෙම දත්ත පසුව ඇතුලත් කල හැකිය', '3000', 'center').subscribe(
           (toast) => {
 
           }
         );
       }
     );
+
+    loader.dismiss();
+
   }
+
+  busStopRequest() {
+    return new Promise((resolve, reject) => {
+      this.syncer.syncNowBusStop(this.busStopData).subscribe(
+        (res) => {
+
+          this.updateBusStopSyncStatus(this.busStopData);
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  journeyRequest() {
+    return new Promise((resolve, reject) => {
+      this.syncer.syncNowJourney(this.journey).subscribe(
+        (res) => {
+
+          this.updateJourneySyncStatus(this.journey);
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  updateBusStopSyncStatus(busStopData: any) {
+    let busStopDataArr = [];
+    busStopDataArr = busStopData;
+    busStopDataArr.forEach(
+      (busStop) => {
+        this.sqlite.create({
+          name: 'ionicdb.db',
+          location: 'default'
+        }).then(
+          (db: SQLiteObject) => {
+            db.executeSql('UPDATE busstop synced=? WHERE busstopId=?', [1, busStop.busstopId])
+              .then((res) => {
+
+              })
+              .catch(e => console.log(e));
+          }
+        );
+      }
+    );
+
+  }
+
+  updateJourneySyncStatus(journeyData: any) {
+    this.sqlite.create({
+      name: 'ionicdb.db',
+      location: 'default'
+    }).then(
+      (db: SQLiteObject) => {
+        db.executeSql('UPDATE journey synced=? WHERE journeyId=?', [1, journeyData.journeyId])
+          .then((res) => {
+
+          })
+          .catch(e => console.log(e));
+      }
+    );
+  }
+
+
 }

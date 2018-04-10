@@ -32,7 +32,10 @@
   </ion-list>-->
 
   <ion-row justify-content-center align-items-center style="height: 20%">
-    <br><br><br><br>
+    <!--<br><br><br><br>-->
+    <div>
+      {{journey | json }}
+    </div>
     <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()">GPS ඛණ්ඩාංක ගන්න</button>
     <div *ngIf="location">
       <h2>Your location is:</h2>
@@ -40,7 +43,7 @@
       <p>Lat: {{ location.latitude }}</p>
     </div>
     <div>
-      {{testData | json }}
+      {{busStopData | json }}
     </div>
   </ion-row>
 
