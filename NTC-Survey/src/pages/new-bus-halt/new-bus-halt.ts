@@ -7,6 +7,7 @@ import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Geolocation} from '@ionic-native/geolocation';
 import {GetDownPage} from '../get-down/get-down';
+import {NewJourneyPage} from '../new-journey/new-journey';
 import {SyncerProvider} from '../../providers/syncer/syncer';
 
 /**
@@ -57,15 +58,14 @@ export class NewBusHaltPage {
       this.location.longitude = res.coords.longitude;
       this.location.latitude = res.coords.latitude;
       loader.dismiss();
-      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි' + this.location.latitude, '3000', 'center').subscribe(
+      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි', '2000', 'center').subscribe(
         (toast) => {
 
         }
       );
       setTimeout(() => {
         this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
-      }, 3500);
-
+      }, 2100);
 
     }).catch(async (err) => {
       loader.dismiss();
@@ -131,6 +131,9 @@ export class NewBusHaltPage {
 
               }
             );
+            setTimeout(() => {
+              this.navCtrl.push(NewJourneyPage);
+            }, 3100);
           },
           (error) => {
             this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි, ඔබට මෙම දත්ත පසුව ඇතුලත් කල හැකිය', '3000', 'center').subscribe(
@@ -138,6 +141,9 @@ export class NewBusHaltPage {
 
               }
             );
+            setTimeout(() => {
+              this.navCtrl.push(NewJourneyPage);
+            }, 3100);
           }
         )
       },
@@ -145,9 +151,12 @@ export class NewBusHaltPage {
         this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි, ඔබට මෙම දත්ත පසුව ඇතුලත් කල හැකිය', '3000', 'center').subscribe(
           (toast) => {
 
-            
+
           }
         );
+        setTimeout(() => {
+          this.navCtrl.push(NewJourneyPage);
+        }, 3100);
       }
     );
 

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {NewBusHaltPage} from '../new-bus-halt/new-bus-halt';
-
+import { SyncLaterPage } from '../sync-later/sync-later';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {v4} from 'uuid';
@@ -89,6 +89,8 @@ export class NewJourneyPage {
     });
 
   }
-
+pushToSyncLater(){
+    this.navCtrl.push(SyncLaterPage);
+}
 
 }

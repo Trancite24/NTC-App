@@ -12,13 +12,24 @@
 
 
 <ion-content padding>
-
-  <form (ngSubmit)="finishClicked()" style="height: 100%">
+  <ion-searchbar
+    [(ngModel)]="name"
+    [showCancelButton]="shouldShowCancel"
+    (ionChange)="test()"
+    >
+  </ion-searchbar>
+  <ion-item-sliding  *ngFor="let city of cities; let i=index" #item>
+    <ion-item nopadding (click)="setName(city.description)">
+      {{city.description}}
+    </ion-item>
+  </ion-item-sliding>
+  <form (ngSubmit)="finishClicked()" style="height: 80%">
     <ion-row justify-content-center align-items-center style="height: 40%">
       <ion-item>
         <ion-label>නම</ion-label>
         <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-        <ion-input text-right type="text" placeholder="" [(ngModel)]="name" name="description" required=""></ion-input>
+        <ion-input text-right type="text" placeholder=""  (ionChange)="test($event)" [(ngModel)]="name" name="description" required=""></ion-input>
+
       </ion-item>
     </ion-row>
     <br>

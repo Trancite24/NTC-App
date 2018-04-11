@@ -14,6 +14,7 @@ import { NewJourneyPage } from '../pages/new-journey/new-journey';
 import { NewBusHaltPage } from '../pages/new-bus-halt/new-bus-halt';
 import { GetDownPage } from '../pages/get-down/get-down';
 import { EndBusHaltPage } from '../pages/end-bus-halt/end-bus-halt';
+import { SyncLaterPage } from '../pages/sync-later/sync-later';
 import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Keyboard} from '@ionic-native/keyboard';
@@ -29,7 +30,8 @@ import { SyncerProvider } from '../providers/syncer/syncer';
     NewJourneyPage,
     NewBusHaltPage,
     GetDownPage,
-    EndBusHaltPage
+    EndBusHaltPage,
+    SyncLaterPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { SyncerProvider } from '../providers/syncer/syncer';
     NewJourneyPage,
     NewBusHaltPage,
     GetDownPage,
-    EndBusHaltPage
+    EndBusHaltPage,
+    SyncLaterPage
   ],
   providers: [
     StatusBar,

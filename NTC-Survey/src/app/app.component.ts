@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NewBusHaltPage } from "../pages/new-bus-halt/new-bus-halt";
 import { GetDownPage } from "../pages/get-down/get-down";
 import { EndBusHaltPage } from "../pages/end-bus-halt/end-bus-halt";
+import { SyncLaterPage } from "../pages/sync-later/sync-later";
+
 import { Keyboard } from '@ionic-native/keyboard';
 
 import { HomePage } from '../pages/home/home';

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
 /*
   Generated class for the SyncerProvider provider.
@@ -14,14 +14,20 @@ export class SyncerProvider {
     console.log('Hello SyncerProvider Provider');
   }
 
-  syncNowBusStop(data: any){
-    return this.http.post<any>('https://8yw1zzliak.execute-api.us-east-1.amazonaws.com/dev/insertintobusstoptable', data);
-  }
-  syncNowJourney(data: any){
-    return this.http.post<any>('https://8yw1zzliak.execute-api.us-east-1.amazonaws.com/dev/insertintojourneytable', data);
+  syncNowBusStop(data: any) {
+    return this.http.post<any>('https://u7qprbx4wg.execute-api.us-east-1.amazonaws.com/production/insertintobusstoptable', data);
   }
 
-  syncLater(){
+  syncNowJourney(data: any) {
+    return this.http.post<any>('https://u7qprbx4wg.execute-api.us-east-1.amazonaws.com/production/insertintojourneytable', data);
+  }
+
+  syncLater() {
 
   }
+
+  test(input: string) {
+    return this.http.get<any>('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='+input+'&types=geocode&components=country:lk&key=AIzaSyCaTPNS8M61OHndMio7tOcCus_Ku9r9dmo');
+  }
+
 }

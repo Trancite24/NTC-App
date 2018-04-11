@@ -5,6 +5,7 @@ import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {NewBusHaltPage} from "../new-bus-halt/new-bus-halt";
 import {Toast} from '@ionic-native/toast';
 import {v4} from 'uuid';
+import {SyncerProvider} from "../../providers/syncer/syncer";
 
 /**
  * Generated class for the EndBusHaltPage page.
@@ -22,19 +23,21 @@ export class EndBusHaltPage {
 
   journeyId: string;
   location: any;
-  name: string;
+  name: string = '';
   outData: any;
   inData: any;
   outTotal: any;
   inTotal: any;
   routeNo: string;
   heading: string;
+  cities: any [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private sqlite: SQLite,
-    private toast: Toast
+    private toast: Toast,
+    private syncer: SyncerProvider
   ) {
     console.log(this.navParams.get('outData'));
     console.log(this.navParams.get('inData'));
@@ -77,7 +80,7 @@ export class EndBusHaltPage {
   finishClicked() {
     this.inserDataToLocalDB();
     this.insertToLocalTable();
-    this.navCtrl.push(NewBusHaltPage, { journeyId: this.journeyId });
+    this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
   }
 
   inserDataToLocalDB() {
@@ -102,12 +105,12 @@ export class EndBusHaltPage {
     });
   }
 
-  insertToLocalTable(){
+  insertToLocalTable() {
     const busHaltId = v4();
     this.sqlite.create({
       name: 'ionicdb.db',
       location: 'default'
-    }).then( (db: SQLiteObject) => {
+    }).then((db: SQLiteObject) => {
       db.executeSql('INSERT INTO busstop VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
         [
           busHaltId,
@@ -138,15 +141,11 @@ export class EndBusHaltPage {
       )
         .then(res => {
           console.log(res);
-          this.toast.show('Data saved', '5000', 'center').subscribe(
-            toast => {
 
-            }
-          );
         })
         .catch(e => {
           console.log(e);
-          this.toast.show(e+' error', '5000', 'center').subscribe(
+          this.toast.show(e + ' error', '5000', 'center').subscribe(
             toast => {
               console.log(toast);
             }
@@ -155,6 +154,27 @@ export class EndBusHaltPage {
     }).catch(
 
     )
+  }
+
+  test(event: any) {
+    this.syncer.test(this.name).subscribe(
+      (res) => {
+        console.log(res.predictions);
+        if(res.predictions.length > 4)
+        this.cities = res.predictions;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    console.log(event);
+
+  }
+
+  setName(name: string) {
+    this.cities = [];
+    this.name = name.replace(',','').replace('Sri Lanka','').replace(',','');
+
   }
 
 }

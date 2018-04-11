@@ -11,6 +11,8 @@ provider:
 
 custom:
   webpackIncludeModules: true
+  defaultStage: prod
+
 
 
 functions:

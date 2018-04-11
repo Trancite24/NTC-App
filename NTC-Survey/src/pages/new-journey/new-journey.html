@@ -1,10 +1,20 @@
 <ion-content padding no-bounce>
 
   <ion-grid>
-    <h2>අළුත් චාරිකාවක්</h2>
-    <ion-row justify-content-center align-items-center>
+    <ion-row justify-content-center align-items-center style="height: 10%">
+      <ion-col col-8>
+        <h4>අළුත් චාරිකාවක්</h4>
+      </ion-col>
+      <ion-col col-4 style="text-align: right">
+        <button ion-button color="secondary" (click)="pushToSyncLater()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
 
-      <br><br><br>
+    <ion-row justify-content-center align-items-center style="height: 90%">
+
+      <br>
       <form (ngSubmit)="insertJourneyDetails()">
         <ion-item>
           <ion-label>දිනය</ion-label>
@@ -20,19 +30,21 @@
           <ion-option value="Expense">Expense</ion-option>-->
           <!--
            </ion-select>-->
-          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo"  name="amount" required=""></ion-input>
+          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo" name="amount"
+                     required=""></ion-input>
         </ion-item>
         <br>
         <ion-item>
-        <ion-label>මාර්ගයේ නම</ion-label>
-        <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-        <ion-input type="text" placeholder="" [(ngModel)]="data.routeName" name="description" required=""></ion-input>
-      </ion-item>
+          <ion-label>මාර්ගයේ නම</ion-label>
+          <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
+          <ion-input type="text" placeholder="" [(ngModel)]="data.routeName" name="description" required=""></ion-input>
+        </ion-item>
         <br>
         <ion-item>
           <ion-label>දිශාව</ion-label>
           <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.heading" name="description" required=""></ion-input>
+          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.heading" name="description"
+                     required=""></ion-input>
         </ion-item>
         <br>
         <ion-item>
@@ -46,7 +58,7 @@
         </ion-item>
 
         <br><br><br><br>
-        <button ion-button type="submit" block large color="secondary"><b>ගමන අරඹන්න</b></button>
+        <button ion-button type="submit" block large><b>ගමන අරඹන්න</b></button>
 
 
       </form>
