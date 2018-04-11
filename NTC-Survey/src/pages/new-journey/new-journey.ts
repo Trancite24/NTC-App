@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {NewBusHaltPage} from '../new-bus-halt/new-bus-halt';
-import { SyncLaterPage } from '../sync-later/sync-later';
+import {SyncLaterPage} from '../sync-later/sync-later';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {v4} from 'uuid';
@@ -57,46 +57,58 @@ export class NewJourneyPage {
   }
 
   insertJourneyDetails() {
-    this.sqlite.create({
-      name: 'ionicdb.db',
-      location: 'default'
-    }).then((db: SQLiteObject) => {
-      const uuid = v4();
-      db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?)', [uuid, this.data.date, this.data.routeNo, this.data.routeName, this.data.heading, this.data.door, 0])
-        .then(res => {
-          console.log(res);
-          this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '2000', 'center').subscribe(
-            toast => {
-
-
-            }
-          );
-          setTimeout(() => {
-              this.navCtrl.push(NewBusHaltPage, {journeyId: uuid});
-            }
-            , 2000);
-        })
-        .catch(e => {
-          console.log(e);
-          this.toast.show('චාරිකාවේ දත්ත සටහන් කරගැනීම අසාර්ථකයි, නැවත උත්සහ කරන්න', '5000', 'center').subscribe(
-            toast => {
-              console.log(toast);
-            }
-          );
-        });
-
-    }).catch(e => {
-      console.log(e);
-      this.toast.show(e, '5000', 'center').subscribe(
+    if (this.data.date === '' || this.data.routeNo === '' || this.data.routeName === '' || this.data.heading === '' || this.data.door === '') {
+      this.toast.show('දත්ත සියල්ල නිසියාකාරව ඇතුල් කරන්න!', '2000', 'center').subscribe(
         toast => {
-          console.log(toast);
+
+
         }
       );
-    });
+
+    } else {
+      this.sqlite.create({
+        name: 'ionicdb.db',
+        location: 'default'
+      }).then((db: SQLiteObject) => {
+        const uuid = v4();
+        db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?)', [uuid, this.data.date, this.data.routeNo, this.data.routeName, this.data.heading, this.data.door, 0])
+          .then(res => {
+            console.log(res);
+            this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '2000', 'center').subscribe(
+              toast => {
+
+
+              }
+            );
+            setTimeout(() => {
+                this.navCtrl.push(NewBusHaltPage, {journeyId: uuid});
+              }
+              , 2000);
+          })
+          .catch(e => {
+            console.log(e);
+            this.toast.show('චාරිකාවේ දත්ත සටහන් කරගැනීම අසාර්ථකයි, නැවත උත්සහ කරන්න', '5000', 'center').subscribe(
+              toast => {
+                console.log(toast);
+              }
+            );
+          });
+
+      }).catch(e => {
+        console.log(e);
+        this.toast.show(e, '5000', 'center').subscribe(
+          toast => {
+            console.log(toast);
+          }
+        );
+      });
+    }
+
 
   }
-pushToSyncLater(){
+
+  pushToSyncLater() {
     this.navCtrl.push(SyncLaterPage);
-}
+  }
 
 }

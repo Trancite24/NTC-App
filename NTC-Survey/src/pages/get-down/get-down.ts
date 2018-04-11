@@ -276,11 +276,11 @@ export class GetDownPage {
         {
           text: 'ආපසු',
           handler: () => {
-            console.log('Disagree clicked');
+
           }
         },
         {
-          text: 'සනාථ කරන්න',
+          text: 'ඔව්',
           handler: () => {
             this.navCtrl.push(EndBusHaltPage,{
               journeyId: this.journeyId,

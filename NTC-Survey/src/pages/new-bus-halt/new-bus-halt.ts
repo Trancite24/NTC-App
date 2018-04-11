@@ -54,7 +54,7 @@ export class NewBusHaltPage {
     });
     loader.present();
     await this.platform.ready();
-    await this.geoLocation.getCurrentPosition({timeout: 60000}).then(async (res) => {
+    await this.geoLocation.getCurrentPosition({timeout: 60000, enableHighAccuracy: true}).then(async (res) => {
       this.location.longitude = res.coords.longitude;
       this.location.latitude = res.coords.latitude;
       loader.dismiss();

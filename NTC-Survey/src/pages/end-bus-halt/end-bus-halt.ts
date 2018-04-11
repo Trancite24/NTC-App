@@ -78,9 +78,19 @@ export class EndBusHaltPage {
   }
 
   finishClicked() {
-    this.inserDataToLocalDB();
-    this.insertToLocalTable();
-    this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
+    if (this.name === '') {
+      this.toast.show('බස් නැවතුමෙහි නම ඇතුලත් කරන්න!', '2000', 'center').subscribe(
+        toast => {
+
+        }
+      );
+    }
+    else {
+      this.inserDataToLocalDB();
+      this.insertToLocalTable();
+      this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
+    }
+
   }
 
   inserDataToLocalDB() {
@@ -160,8 +170,8 @@ export class EndBusHaltPage {
     this.syncer.test(this.name).subscribe(
       (res) => {
         console.log(res.predictions);
-        if(res.predictions.length > 4)
-        this.cities = res.predictions;
+        if (res.predictions.length > 4)
+          this.cities = res.predictions;
       },
       (err) => {
         console.log(err);
@@ -173,7 +183,7 @@ export class EndBusHaltPage {
 
   setName(name: string) {
     this.cities = [];
-    this.name = name.replace(',','').replace('Sri Lanka','').replace(',','');
+    this.name = name.replace(',', '').replace('Sri Lanka', '').replace(',', '');
 
   }
 
