@@ -204,7 +204,7 @@ export class NewBusHaltPage {
           location: 'default'
         }).then(
           (db: SQLiteObject) => {
-            db.executeSql('UPDATE busstop synced=? WHERE busstopId=?', [1, busStop.busstopId])
+            db.executeSql('UPDATE busstop SET synced=? WHERE busstopId=?', [1, busStop.busstopId])
               .then((res) => {
 
               })
@@ -222,7 +222,7 @@ export class NewBusHaltPage {
       location: 'default'
     }).then(
       (db: SQLiteObject) => {
-        db.executeSql('UPDATE journey synced=? WHERE journeyId=?', [1, journeyData.journeyId])
+        db.executeSql('UPDATE journey SET synced=? WHERE journeyId=?', [1, journeyData.journeyId])
           .then((res) => {
 
           })

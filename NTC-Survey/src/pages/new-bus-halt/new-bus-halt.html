@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar [hideBackButton]="true">
     <ion-title>නව බස් නැවතුම</ion-title>
   </ion-navbar>
 
@@ -36,7 +36,7 @@
    <!-- <div>
       {{journey | json }}
     </div>-->
-    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()">GPS ඛණ්ඩාංක ගන්න</button>
+    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()"><b>GPS ඛණ්ඩාංක ගන්න</b></button>
     <!--<div *ngIf="location">
       <h2>Your location is:</h2>
       <p>Lon: {{ location.longitude }}</p>
@@ -48,7 +48,7 @@
   </ion-row>
 
   <ion-row justify-content-end align-items-end style="height: 80%">
-    <button  class="button button-dark customBtnEnd" (click)="syncNow()" ion-button round>ගමන අවසන් කරන්න</button>
+    <button  class="button button-dark customBtnEnd" (click)="syncNow()" ion-button round><b>ගමන අවසන් කරන්න</b></button>
   </ion-row>
 
 

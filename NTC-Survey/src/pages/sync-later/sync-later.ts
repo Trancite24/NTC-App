@@ -7,6 +7,8 @@ import {Toast} from '@ionic-native/toast';
 
 import {SyncerProvider} from '../../providers/syncer/syncer';
 
+import { NewJourneyPage } from '../new-journey/new-journey';
+
 /**
  * Generated class for the SyncLaterPage page.
  *
@@ -51,11 +53,15 @@ export class SyncLaterPage {
           this.unSyncedJourney = [];
           if (res.rows.length === 0){
             this.allUpdated = true;
-            this.toast.show('සියළු දත්ත යාවත්කාලීනයි!', '5000', 'center').subscribe(
+            this.toast.show('සියළු දත්ත යාවත්කාලීනයි!', '2000', 'center').subscribe(
               (toast) => {
 
               }
             );
+            setTimeout( () => {
+              this.navCtrl.push(NewJourneyPage);
+            }, 2000);
+
           }
 
             for (let i = 0; i < res.rows.length; i++) {

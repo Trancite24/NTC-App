@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams } from 'ionic-angular';
 import {NewBusHaltPage} from '../new-bus-halt/new-bus-halt';
 import { SyncLaterPage } from '../sync-later/sync-later';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
@@ -29,7 +29,13 @@ export class NewJourneyPage {
     door: ''
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private sqlite: SQLite,
+    private toast: Toast
+  ) {
+
   }
 
   ionViewDidLoad() {
