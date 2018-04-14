@@ -6,6 +6,8 @@ import {LoadingController} from 'ionic-angular';
 import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Geolocation} from '@ionic-native/geolocation';
+import { Diagnostic } from '@ionic-native/diagnostic';
+
 import {GetDownPage} from '../get-down/get-down';
 import {NewJourneyPage} from '../new-journey/new-journey';
 import {SyncerProvider} from '../../providers/syncer/syncer';
@@ -38,6 +40,7 @@ export class NewBusHaltPage {
     private sqlite: SQLite,
     private toast: Toast,
     private geoLocation: Geolocation,
+    private diagnostic: Diagnostic,
     private syncer: SyncerProvider
   ) {
     this.journeyId = this.navParams.get('journeyId');
@@ -46,6 +49,23 @@ export class NewBusHaltPage {
   ionViewDidLoad() {
     this.loadBusStopDta();
     this.loadJourneyData();
+    this.diagnostic.isGpsLocationEnabled().then(
+      (enabled) =>{
+        this.toast.show('GPS '+(enabled ? 'enabled' : 'disabled'), '5000', 'center').subscribe(
+          (toast) => {
+
+          }
+        );
+      }
+    ).catch(
+      (err) => {
+        this.toast.show('Error!', '5000', 'center').subscribe(
+          (toast) => {
+
+          }
+        );
+      }
+    )
   }
 
   async getGoeLocation() {
@@ -64,7 +84,8 @@ export class NewBusHaltPage {
         }
       );
       setTimeout(() => {
-        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
+        let timeStamp = new Date().toString();
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location, timeStamp: timeStamp});
       }, 2100);
 
     }).catch(async (err) => {

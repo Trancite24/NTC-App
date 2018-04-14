@@ -20,6 +20,8 @@ import {Toast} from '@ionic-native/toast';
 import {Keyboard} from '@ionic-native/keyboard';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Vibration } from '@ionic-native/vibration';
+import { Diagnostic } from '@ionic-native/diagnostic';
+
 import { SyncerProvider } from '../providers/syncer/syncer';
 
 
@@ -59,6 +61,7 @@ import { SyncerProvider } from '../providers/syncer/syncer';
     Keyboard,
     SyncerProvider,
     HttpClient,
+    Diagnostic
   ]
 })
 export class AppModule {}

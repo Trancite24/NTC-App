@@ -15,7 +15,7 @@
   <ion-searchbar
     [(ngModel)]="name"
     [showCancelButton]="shouldShowCancel"
-    (ionChange)="test()"
+    (ionChange)="test($event)"
     >
   </ion-searchbar>
   <ion-item-sliding  *ngFor="let city of cities; let i=index" #item>

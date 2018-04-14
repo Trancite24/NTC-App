@@ -49,7 +49,7 @@ export const createBusStopTable = async (event, context, callback) => {
         database: 'NTCSurvey',
     });
 
-    let sqlQuery = 'CREATE TABLE busstop(busstopId VARCHAR(50),journeyId VARCHAR(50),lat VARCHAR(25),lon VARCHAR(25),name VARCHAR(50),maleChildOut INTEGER,maleYoungOut INTEGER,maleManOut INTEGER,maleElderOut INTEGER,femaleChildOut INTEGER,femaleYoungOut INTEGER,femaleWomanOut INTEGER,femaleElderOut INTEGER,maleChildIn INTEGER,maleYoungIn INTEGER,maleManIn INTEGER,maleElderIn INTEGER,femaleChildIn INTEGER,femaleYoungIn INTEGER,femaleWomanIn INTEGER,femaleElderIn INTEGER,outTotal INTEGER,inTotal INTEGER,PRIMARY KEY (busstopId)) ENGINE=InnoDB';
+    let sqlQuery = 'CREATE TABLE busstop(busstopId VARCHAR(50),journeyId VARCHAR(50),lat VARCHAR(25),lon VARCHAR(25),name VARCHAR(50),timeStamp VARCHAR(50),maleChildOut INTEGER,maleYoungOut INTEGER,maleManOut INTEGER,maleElderOut INTEGER,femaleChildOut INTEGER,femaleYoungOut INTEGER,femaleWomanOut INTEGER,femaleElderOut INTEGER,maleChildIn INTEGER,maleYoungIn INTEGER,maleManIn INTEGER,maleElderIn INTEGER,femaleChildIn INTEGER,femaleYoungIn INTEGER,femaleWomanIn INTEGER,femaleElderIn INTEGER,outTotal INTEGER,inTotal INTEGER,updatedTime VARCHAR(50),PRIMARY KEY (busstopId)) ENGINE=InnoDB';
     connection.query(sqlQuery, (error, results, fields) => {
         if (error) {
             connection.destroy();
@@ -197,8 +197,8 @@ export const insertIntoBusStopTable = async (event, context, callback) => {
     for (let i = 0; i < busStops.length; i++) {
     let busStop = busStops[i];
     console.log(busStop);
-
-        let sqlQuery = `INSERT INTO busstop (busstopId, journeyId, lat, lon, name, maleChildOut, maleYoungOut, maleManOut, maleElderOut, femaleChildOut, femaleYoungOut, femaleWomanOut, femaleElderOut, maleChildIn, maleYoungIn, maleManIn, maleElderIn, femaleChildIn, femaleYoungIn, femaleWomanIn, femaleElderIn, outTotal, inTotal)VALUES ('${busStop.busstopId}', '${busStop.journeyId}', '${busStop.lat}', '${busStop.lon}', '${busStop.name}', '${busStop.maleChildOut}', '${busStop.maleYoungOut}', '${busStop.maleManOut}', '${busStop.maleElderOut}', '${busStop.femaleChildOut}', '${busStop.femaleYoungOut}', '${busStop.femaleWomanOut}', '${busStop.femaleElderOut}', '${busStop.maleChildIn}', '${busStop.maleYoungIn}', '${busStop.maleManIn}', '${busStop.maleElderIn}', '${busStop.femaleChildIn}', '${busStop.femaleYoungIn}', '${busStop.femaleWomanIn}', '${busStop.femaleElderIn}', '${busStop.outTotal}', '${busStop.inTotal}');`;
+     let updatedTime = new Date();
+        let sqlQuery = `INSERT INTO busstop (busstopId, journeyId, lat, lon, name, timeStamp ,maleChildOut, maleYoungOut, maleManOut, maleElderOut, femaleChildOut, femaleYoungOut, femaleWomanOut, femaleElderOut, maleChildIn, maleYoungIn, maleManIn, maleElderIn, femaleChildIn, femaleYoungIn, femaleWomanIn, femaleElderIn, outTotal, inTotal, updatedTime)VALUES ('${busStop.busstopId}', '${busStop.journeyId}', '${busStop.lat}', '${busStop.lon}', '${busStop.name}', '${busStop.timeStamp}', '${busStop.maleChildOut}', '${busStop.maleYoungOut}', '${busStop.maleManOut}', '${busStop.maleElderOut}', '${busStop.femaleChildOut}', '${busStop.femaleYoungOut}', '${busStop.femaleWomanOut}', '${busStop.femaleElderOut}', '${busStop.maleChildIn}', '${busStop.maleYoungIn}', '${busStop.maleManIn}', '${busStop.maleElderIn}', '${busStop.femaleChildIn}', '${busStop.femaleYoungIn}', '${busStop.femaleWomanIn}', '${busStop.femaleElderIn}', '${busStop.outTotal}', '${busStop.inTotal}', '${updatedTime}');`;
         connection.query(sqlQuery, (error, results, fields) => {
             if (error) {
                 connection.destroy();

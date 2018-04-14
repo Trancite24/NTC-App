@@ -27,7 +27,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.malechild}}
                      [(ngModel)]="outData.malechild"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" src="assets/imgs/male-child.jpg" (click)="countUp('out','malechild')"
@@ -39,7 +39,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.femalechild}}
                      [(ngModel)]="outData.femalechild"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-child.jpg"
@@ -52,7 +52,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleyoung}}
                      [(ngModel)]="outData.maleyoung"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-young.jpg"
@@ -63,7 +63,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.femaleyoung}}
                      [(ngModel)]="outData.femaleyoung"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-young.jpg"
@@ -76,7 +76,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleman}}
                      [(ngModel)]="outData.maleman"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-man.jpg"
@@ -87,7 +87,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.femalewoman}}
                      [(ngModel)]="outData.femalewoman"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-woman.jpg"
@@ -100,7 +100,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleelder}}
                      [(ngModel)]="outData.maleelder"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-elder.jpg"
@@ -111,7 +111,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.femaleelder}}
                      [(ngModel)]="outData.femaleelder"
-                     required="" (ionChange)="outTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-elder.jpg"
@@ -121,11 +121,11 @@
     </ion-row>
     <ion-item-divider></ion-item-divider>
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
-      <ion-col class="age-group-content">
+      <ion-col class="age-group-content" col-3>
         එකතුව
         <div class="total-count">{{outTotal || 0}}</div>
       </ion-col>
-      <ion-col class="age-group-content">
+      <ion-col class="age-group-content" col-9>
         <button ion-button round (click)="dataEnterFinshed()"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
       </ion-col>
     </ion-row>
@@ -137,7 +137,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.malechild}}
                      [(ngModel)]="inData.malechild"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-child.jpg"
@@ -150,7 +150,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.femalechild}}
                      [(ngModel)]="inData.femalechild"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-child.jpg"
@@ -163,7 +163,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleyoung}}
                      [(ngModel)]="inData.maleyoung"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-young.jpg"
@@ -174,7 +174,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.femaleyoung}}
                      [(ngModel)]="inData.femaleyoung"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-young.jpg"
@@ -187,7 +187,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleman}}
                      [(ngModel)]="inData.maleman"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-man.jpg"
@@ -198,7 +198,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.femalewoman}}
                      [(ngModel)]="inData.femalewoman"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-woman.jpg"
@@ -211,7 +211,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleelder}}
                      [(ngModel)]="inData.maleelder"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-elder.jpg"
@@ -222,7 +222,7 @@
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.femaleelder}}
                      [(ngModel)]="inData.femaleelder"
-                     required="" (ionChange)="inTotalCalc()"></ion-input>
+                     required="" ></ion-input>
 
         </ion-row>
         <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-elder.jpg"
@@ -232,11 +232,11 @@
     </ion-row>
     <ion-item-divider></ion-item-divider>
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
-      <ion-col class="age-group-content">
+      <ion-col class="age-group-content" col-3>
         එකතුව
         <div class="total-count">{{inTotal || 0}}</div>
       </ion-col>
-      <ion-col class="age-group-content">
+      <ion-col class="age-group-content" col-9>
         <button ion-button round (click)="dataEnterFinshed()"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
       </ion-col>
     </ion-row>

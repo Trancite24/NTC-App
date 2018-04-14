@@ -25,6 +25,7 @@ export class GetDownPage {
 
   journeyId: string;
   location: any;
+  timeStamp: string;
   outData: any = {
     malechild: 0,
     maleyoung: 0,
@@ -46,7 +47,8 @@ export class GetDownPage {
     femaleelder: 0
   };
   outTotal: number;
-  inTotal: number;
+  inTotal: number = this.inData.malechild + this.inData.maleyoung + this.inData.maleman + this.inData.maleelder + this.inData.femalechild + this.inData.femaleyoung + this.inData.femalewoman + this.inData.femaleelder;
+
   status: string = "out";
   isAndroid: boolean = false;
 
@@ -73,6 +75,8 @@ export class GetDownPage {
     },5000)*/
     this.journeyId = this.navParams.get('journeyId');
     this.location = this.navParams.get('location');
+    this.timeStamp = this.navParams.get('timeStamp');
+
   }
 
   countUp(status: string, ageCategory: string) {
@@ -285,6 +289,7 @@ export class GetDownPage {
             this.navCtrl.push(EndBusHaltPage,{
               journeyId: this.journeyId,
               location: this.location,
+              timeStamp: this.timeStamp,
               outData: this.outData,
               inData: this.inData,
               outTotal: this.outTotal,
