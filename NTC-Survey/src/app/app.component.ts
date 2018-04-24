@@ -13,6 +13,7 @@ import {SyncLaterPage} from "../pages/sync-later/sync-later";*/
 import {Keyboard} from '@ionic-native/keyboard';
 
 import {HomePage} from '../pages/home/home';
+import { GetDownPage } from "../pages/get-down/get-down";
 
 @Component({
   templateUrl: 'app.html'

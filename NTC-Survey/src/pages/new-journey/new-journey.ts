@@ -6,7 +6,7 @@ import {SyncLaterPage} from '../sync-later/sync-later';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {v4} from 'uuid';
-import {EndBusHaltPage} from "../end-bus-halt/end-bus-halt";
+
 
 /**
  * Generated class for the NewJourneyPage page.
