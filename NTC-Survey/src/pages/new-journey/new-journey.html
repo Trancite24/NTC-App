@@ -14,7 +14,6 @@
 
     <ion-row justify-content-center align-items-center style="height: 90%">
 
-      <br>
       <form (ngSubmit)="insertJourneyDetails()">
         <ion-item>
           <ion-label>දිනය</ion-label>
@@ -71,6 +70,7 @@
             </ion-col>
           </ion-list>-->
         </ion-item>
+        <br>
         <ion-item>
           <ion-label>ආසන ගණන</ion-label>
           <ion-input type="number" float="right" placeholder=" " [(ngModel)]="data.numberOfSeats" name="seats"

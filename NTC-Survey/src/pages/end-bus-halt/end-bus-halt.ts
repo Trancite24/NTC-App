@@ -88,14 +88,14 @@ export class EndBusHaltPage {
       );
     }
     else {
-      this.inserDataToLocalDB();
+      /*this.inserDataToLocalDB();*/
       this.insertToLocalTable();
       this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
     }
 
   }
 
-  inserDataToLocalDB() {
+  /*inserDataToLocalDB() {
     this.createTable();
   }
 
@@ -116,6 +116,7 @@ export class EndBusHaltPage {
         });
     });
   }
+  */
 
   insertToLocalTable() {
     const busHaltId = v4();
@@ -158,7 +159,7 @@ export class EndBusHaltPage {
         })
         .catch(e => {
           console.log(e);
-          this.toast.show(e + ' error', '5000', 'center').subscribe(
+          this.toast.show(e.message + ' error', '5000', 'center').subscribe(
             toast => {
               console.log(toast);
             }

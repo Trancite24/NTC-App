@@ -7,7 +7,7 @@ import {Toast} from '@ionic-native/toast';
 
 import {SyncerProvider} from '../../providers/syncer/syncer';
 
-import { NewJourneyPage } from '../new-journey/new-journey';
+import {NewJourneyPage} from '../new-journey/new-journey';
 
 /**
  * Generated class for the SyncLaterPage page.
@@ -51,28 +51,28 @@ export class SyncLaterPage {
       db.executeSql('SELECT * FROM journey WHERE synced=0', {})
         .then((res) => {
           this.unSyncedJourney = [];
-          if (res.rows.length === 0){
+          if (res.rows.length === 0) {
             this.allUpdated = true;
             this.toast.show('සියළු දත්ත යාවත්කාලීනයි!', '2000', 'center').subscribe(
               (toast) => {
 
               }
             );
-            setTimeout( () => {
+            setTimeout(() => {
               this.navCtrl.push(NewJourneyPage);
             }, 2000);
 
           }
 
-            for (let i = 0; i < res.rows.length; i++) {
-              this.unSyncedJourney[i] = res.rows.item(i);
+          for (let i = 0; i < res.rows.length; i++) {
+            this.unSyncedJourney[i] = res.rows.item(i);
 
-            }
+          }
 
         })
         .catch(e => {
           console.log(e);
-          this.toast.show(e, '5000', 'center').subscribe(
+          this.toast.show(e.message, '5000', 'center').subscribe(
             (toast) => {
 
             }
@@ -80,7 +80,7 @@ export class SyncLaterPage {
         });
     }).catch(e => {
       console.log(e);
-      this.toast.show(e, '5000', 'center').subscribe(
+      this.toast.show(e.message, '5000', 'center').subscribe(
         (toast) => {
 
         }
@@ -98,7 +98,7 @@ export class SyncLaterPage {
       }
     ).catch(
       (e) => {
-        this.toast.show(e, '5000', 'center').subscribe(
+        this.toast.show(e.message, '5000', 'center').subscribe(
           (toast) => {
 
           }
@@ -136,27 +136,38 @@ export class SyncLaterPage {
       this.unSyncedBusStop = [];
 
 
-          this.sqlite.create({
-            name: 'ionicdb.db',
-            location: 'default'
-          }).then((db: SQLiteObject) => {
-            db.executeSql('SELECT * FROM busstop WHERE synced=0', {})
-              .then(res => {
+      this.sqlite.create({
+        name: 'ionicdb.db',
+        location: 'default'
+      }).then((db: SQLiteObject) => {
+        db.executeSql('SELECT * FROM busstop WHERE synced=0', {})
+          .then(res => {
 
-                for (let i = 0; i < res.rows.length; i++) {
-                  this.unSyncedBusStop.push(res.rows.item(i));
-                }
-                resolve(res);
-              })
-              .catch(e => {
-                console.log(e);
-                reject(e)
-              });
-
-          }).catch(e => {
+            for (let i = 0; i < res.rows.length; i++) {
+              this.unSyncedBusStop.push(res.rows.item(i));
+            }
+            resolve(res);
+          })
+          .catch(e => {
             console.log(e);
-            reject(e)
+            this.toast.show(e.message, '5000', 'center').subscribe(
+              (toast) => {
+
+              }
+            );
+            reject(e);
+
           });
+
+      }).catch(e => {
+        console.log(e);
+        this.toast.show(e.message, '5000', 'center').subscribe(
+          (toast) => {
+
+          }
+        );
+        reject(e)
+      });
 
 
     });
@@ -211,6 +222,11 @@ export class SyncLaterPage {
 
         },
         (err) => {
+          this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි \n අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න! ' + err.message, '5000', 'center').subscribe(
+            (toast) => {
+
+            }
+          );
           reject(err);
         }
       );
@@ -230,6 +246,11 @@ export class SyncLaterPage {
               resolve(res);
             },
             (err) => {
+              this.toast.show('යාවත්කාලීන කිරීම අසාර්ථකයි \n අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න! ' + err.message, '5000', 'center').subscribe(
+                (toast) => {
+
+                }
+              );
               reject(err);
             }
           );
@@ -243,22 +264,32 @@ export class SyncLaterPage {
   updateBusStopSyncStatus(busStopData: any) {
     let busStopDataArr = [];
     busStopDataArr = this.unSyncedBusStop;
-    busStopDataArr.forEach(
-      (busStop) => {
-        this.sqlite.create({
-          name: 'ionicdb.db',
-          location: 'default'
-        }).then(
-          (db: SQLiteObject) => {
-            db.executeSql('UPDATE busstop SET synced=? WHERE busstopId=?', [1, busStop.busstopId])
-              .then((res) => {
+    if (busStopDataArr.length > 0) {
+      busStopDataArr.forEach(
+        (busStop) => {
+          this.sqlite.create({
+            name: 'ionicdb.db',
+            location: 'default'
+          }).then(
+            (db: SQLiteObject) => {
+              db.executeSql('UPDATE busstop SET synced=? WHERE busstopId=?', [1, busStop.busstopId])
+                .then((res) => {
 
-              })
-              .catch(e => console.log(e));
-          }
-        );
-      }
-    );
+                })
+                .catch(e => {
+                  console.log(e);
+                  this.toast.show(e.message, '5000', 'center').subscribe(
+                    (toast) => {
+
+                    }
+                  );
+                });
+            }
+          );
+        }
+      );
+    }
+
 
   }
 
@@ -276,7 +307,14 @@ export class SyncLaterPage {
               .then((res) => {
 
               })
-              .catch(e => console.log(e));
+              .catch(e => {
+                console.log(e);
+                this.toast.show(e.message, '5000', 'center').subscribe(
+                  (toast) => {
+
+                  }
+                );
+              });
           }
         );
       }

@@ -22,7 +22,7 @@
 <ion-content padding [ngSwitch]="status">
 
   <ion-grid *ngSwitchCase="'out'" style="height: 100%" ion-fixed>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <ion-row text-center justify-content-center align-items-center style="height: 46%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.malechild}}
@@ -30,7 +30,7 @@
                      required="" ></ion-input>
 
         </ion-row>
-        <img class="age-group-images" src="assets/imgs/male-child.jpg" (click)="countUp('out','malechild')"
+        <img class="age-group-images" width="80%" height="80%" src="assets/imgs/male-child.jpg" (click)="countUp('out','malechild')"
              (swipe)="countDown('out','malechild')">
 
 
@@ -42,12 +42,12 @@
                      required="" ></ion-input>
 
         </ion-row>
-        <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-child.jpg"
+        <img class="age-group-images" width="80%" height="80%" src="assets/imgs/female-child.jpg"
              (click)="countUp('out','femalechild')"
              (swipe)="countDown('out','femalechild')">
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <!--<ion-row text-center justify-content-center align-items-center style="height: 23%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleyoung}}
@@ -70,8 +70,8 @@
              (click)="countUp('out','femaleyoung')"
              (swipe)="countDown('out','femaleyoung')">
       </ion-col>
-    </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    </ion-row>-->
+    <ion-row text-center justify-content-center align-items-center style="height: 46%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleman}}
@@ -79,7 +79,7 @@
                      required="" ></ion-input>
 
         </ion-row>
-        <img class="age-group-images" width="50%" height="80%" src="assets/imgs/male-man.jpg"
+        <img class="age-group-images" width="80%" height="80%" src="assets/imgs/male-man.jpg"
              (click)="countUp('out','maleman')"
              (swipe)="countDown('out','maleman')">
       </ion-col>
@@ -90,12 +90,12 @@
                      required="" ></ion-input>
 
         </ion-row>
-        <img class="age-group-images" width="50%" height="80%" src="assets/imgs/female-woman.jpg"
+        <img class="age-group-images" width="80%" height="80%" src="assets/imgs/female-woman.jpg"
              (click)="countUp('out','femalewoman')"
              (swipe)="countDown('out','femalewoman')">
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <!--<ion-row text-center justify-content-center align-items-center style="height: 23%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{outData.maleelder}}
@@ -118,7 +118,7 @@
              (click)="countUp('out','femaleelder')"
              (swipe)="countDown('out','femaleelder')">
       </ion-col>
-    </ion-row>
+    </ion-row>-->
     <ion-item-divider></ion-item-divider>
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
       <ion-col class="age-group-content" col-3>
@@ -132,7 +132,7 @@
   </ion-grid>
   <ion-grid *ngSwitchCase="'in'" style="height: 100%" ion-fixed>
 
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <ion-row text-center justify-content-center align-items-center style="height: 46%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.malechild}}
@@ -158,7 +158,7 @@
              (swipe)="countDown('in','femalechild')">
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <!--<ion-row text-center justify-content-center align-items-center style="height: 23%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleyoung}}
@@ -181,8 +181,8 @@
              (click)="countUp('in','femaleyoung')"
              (swipe)="countDown('in','femaleyoung')">
       </ion-col>
-    </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    </ion-row>-->
+    <ion-row text-center justify-content-center align-items-center style="height: 46%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleman}}
@@ -206,7 +206,7 @@
              (swipe)="countDown('in','femalewoman')">
       </ion-col>
     </ion-row>
-    <ion-row text-center justify-content-center align-items-center style="height: 23%">
+    <!--<ion-row text-center justify-content-center align-items-center style="height: 23%">
       <ion-col class="age-group-content" style="height: 100%">
         <ion-row text-center justify-content-center align-items-center style="height: 23%">
           <ion-input class="count-text" text-center type="number" placeholder={{inData.maleelder}}
@@ -229,7 +229,7 @@
              (click)="countUp('in','femaleelder')"
              (swipe)="countDown('in','femaleelder')">
       </ion-col>
-    </ion-row>
+    </ion-row>-->
     <ion-item-divider></ion-item-divider>
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
       <ion-col class="age-group-content" col-3>
