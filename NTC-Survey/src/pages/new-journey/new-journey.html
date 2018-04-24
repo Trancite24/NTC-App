@@ -19,7 +19,8 @@
         <ion-item>
           <ion-label>දිනය</ion-label>
           <!--<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>-->
-          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" placeholder={{data.date}} [(ngModel)]="data.date" name="date"
+                        required=""></ion-datetime>
         </ion-item>
         <br>
         <ion-item>
@@ -30,20 +31,20 @@
           <ion-option value="Expense">Expense</ion-option>-->
           <!--
            </ion-select>-->
-          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo" name="amount"
+          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo" name="routeNo"
                      required=""></ion-input>
         </ion-item>
         <br>
         <ion-item>
-          <ion-label>මාර්ගයේ නම</ion-label>
+          <ion-label>සිට</ion-label>
           <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-          <ion-input type="text" placeholder="" [(ngModel)]="data.routeName" name="description" required=""></ion-input>
+          <ion-input type="text" placeholder="" [(ngModel)]="data.fromName" name="from" required=""></ion-input>
         </ion-item>
         <br>
         <ion-item>
-          <ion-label>දිශාව</ion-label>
+          <ion-label>දෙසට</ion-label>
           <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.heading" name="description"
+          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.toName" name="to"
                      required=""></ion-input>
         </ion-item>
         <br>
@@ -55,9 +56,28 @@
             <ion-option value="middle">මැද</ion-option>
 
           </ion-select>
+          <!--<ion-list [(ngModel)]="data.door" name="type" required="">
+            <ion-col col-4>
+              <ion-label>ඉදිරිපස</ion-label>
+              <ion-radio value="front"></ion-radio>
+            </ion-col>
+            <ion-col col-4>
+              <ion-label>පසුපස</ion-label>
+              <ion-radio value="back"></ion-radio>
+            </ion-col>
+            <ion-col col-4>
+              <ion-label>මැද</ion-label>
+              <ion-radio value="middle"></ion-radio>
+            </ion-col>
+          </ion-list>-->
+        </ion-item>
+        <ion-item>
+          <ion-label>ආසන ගණන</ion-label>
+          <ion-input type="number" float="right" placeholder=" " [(ngModel)]="data.numberOfSeats" name="seats"
+                     required=""></ion-input>
         </ion-item>
 
-        <br><br><br><br>
+        <br>
         <button ion-button type="submit" block large><b>ගමන අරඹන්න</b></button>
 
 

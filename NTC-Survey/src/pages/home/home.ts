@@ -19,11 +19,11 @@ export class HomePage {
   login(nic: string, pw: string){
     console.log(v4());
     if(this.loginCredintials.password === pw){
-    this.navCtrl.push(NewJourneyPage);
+    this.navCtrl.push(NewJourneyPage, {nic: this.loginCredintials.nic});
     }
     else{
       let alert = this.alertCtrl.create({
-        title: 'මුරපදය වැරදියි!',
+        title: 'මුරපදය හෝ හැදුනුම්පත් අංකය වැරදියි!',
         subTitle: 'නැවත උත්සහ කරන්න',
         buttons: ['OK']
       });

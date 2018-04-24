@@ -24,10 +24,12 @@ export class NewJourneyPage {
   data = {
     date: '',
     routeNo: '',
-    routeName: '',
-    heading: '',
-    door: ''
+    fromName: '',
+    toName: '',
+    door: '',
+    numberOfSeats: '',
   };
+  nic: string;
 
   constructor(
     public navCtrl: NavController,
@@ -35,12 +37,15 @@ export class NewJourneyPage {
     private sqlite: SQLite,
     private toast: Toast
   ) {
-
+    this.data.date = new Date().toLocaleDateString('en-GB');
+    this.nic = this.navParams.get('nic');
   }
 
   ionViewDidLoad() {
     this.createJourneyTable();
   }
+
+
 
   createJourneyTable() {
     this.sqlite.create(
@@ -49,15 +54,22 @@ export class NewJourneyPage {
         location: 'default'
       }
     ).then((db: SQLiteObject) => {
-      db.executeSql('CREATE TABLE IF NOT EXISTS journey(journeyId TEXT PRIMARY KEY, date TEXT, routeNo TEXT, routeName TEXT, heading TEXT, door TEXT, synced INTEGER DEFAULT 0)', {})
+      db.executeSql('CREATE TABLE IF NOT EXISTS journey(journeyId TEXT PRIMARY KEY, nic TEXT, date TEXT, routeNo TEXT, fromName TEXT, toName TEXT, door TEXT, numberOfSeats INTEGER DEFAULT 0, synced INTEGER DEFAULT 0)', {})
         .then((res) => console.log('Executed query create table journey'))
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          this.toast.show(' '+err.message, '7000', 'center').subscribe(
+            toast => {
+
+
+            }
+          );
+        });
     });
 
   }
 
   insertJourneyDetails() {
-    if (this.data.date === '' || this.data.routeNo === '' || this.data.routeName === '' || this.data.heading === '' || this.data.door === '') {
+    if (this.data.date === '' || this.data.routeNo === '' || this.data.fromName === '' || this.data.toName === '' || this.data.door === '' || Number(this.data.numberOfSeats) < 7) {
       this.toast.show('දත්ත සියල්ල නිසියාකාරව ඇතුල් කරන්න!', '2000', 'center').subscribe(
         toast => {
 
@@ -71,7 +83,7 @@ export class NewJourneyPage {
         location: 'default'
       }).then((db: SQLiteObject) => {
         const uuid = v4();
-        db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?)', [uuid, this.data.date, this.data.routeNo, this.data.routeName, this.data.heading, this.data.door, 0])
+        db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?,?,?)', [uuid, this.nic, this.data.date, this.data.routeNo, this.data.fromName, this.data.toName, this.data.door, Number(this.data.numberOfSeats), 0])
           .then(res => {
             console.log(res);
             this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '2000', 'center').subscribe(
@@ -87,7 +99,7 @@ export class NewJourneyPage {
           })
           .catch(e => {
             console.log(e);
-            this.toast.show('චාරිකාවේ දත්ත සටහන් කරගැනීම අසාර්ථකයි, නැවත උත්සහ කරන්න', '5000', 'center').subscribe(
+            this.toast.show('චාරිකාවේ දත්ත සටහන් කරගැනීම අසාර්ථකයි, නැවත උත්සහ කරන්න'+ e.message, '5000', 'center').subscribe(
               toast => {
                 console.log(toast);
               }
@@ -96,7 +108,7 @@ export class NewJourneyPage {
 
       }).catch(e => {
         console.log(e);
-        this.toast.show(e, '5000', 'center').subscribe(
+        this.toast.show(e.toString(), '5000', 'center').subscribe(
           toast => {
             console.log(toast);
           }
