@@ -88,6 +88,6 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="cordova-plugin-vibration" spec="^3.0.1" />
-    <engine name="android" spec="6.3.0" />
     <plugin name="cordova.plugins.diagnostic" spec="^4.0.5" />
+    <engine name="android" spec="6.3.0" />
 </widget>

@@ -19,7 +19,7 @@ export class HomePage {
   login(nic: string, pw: string){
     console.log(v4());
     if(this.loginCredintials.password === pw){
-    this.navCtrl.push(NewJourneyPage, {nic: this.loginCredintials.nic});
+    this.navCtrl.push(NewJourneyPage, {nic: nic});
     }
     else{
       let alert = this.alertCtrl.create({

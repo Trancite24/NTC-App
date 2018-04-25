@@ -74,7 +74,7 @@ export class NewBusHaltPage {
     });
     loader.present();
     await this.platform.ready();
-    await this.geoLocation.getCurrentPosition({timeout: 60000, enableHighAccuracy: true}).then(async (res) => {
+    await this.geoLocation.getCurrentPosition({timeout: 20000, enableHighAccuracy: true}).then(async (res) => {
       this.location.longitude = res.coords.longitude;
       this.location.latitude = res.coords.latitude;
       loader.dismiss();
@@ -84,7 +84,7 @@ export class NewBusHaltPage {
         }
       );
       setTimeout(() => {
-        let timeStamp = new Date().toString();
+        let timeStamp = new Date().getTime().toString();
         this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location, timeStamp: timeStamp});
       }, 2100);
 

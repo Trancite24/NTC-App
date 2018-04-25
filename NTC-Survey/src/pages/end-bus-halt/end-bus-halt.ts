@@ -24,14 +24,16 @@ export class EndBusHaltPage {
   journeyId: string;
   location: any;
   timeStamp: string;
-  name: string = '';
+  name: string = ' ';
   outData: any;
   inData: any;
   outTotal: any;
   inTotal: any;
+  busStopType: string = '';
   routeNo: string;
   heading: string;
   cities: any [];
+  BRsNotVisible = false;
 
   constructor(
     public navCtrl: NavController,
@@ -57,31 +59,12 @@ export class EndBusHaltPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EndBusHaltPage');
 
-    this.getRouteInfo();
   }
 
-  getRouteInfo() {
-    this.sqlite.create(
-      {
-        name: 'ionicdb.db',
-        location: 'default'
-      }
-    ).then((db: SQLiteObject) => {
-      db.executeSql('SELECT * FROM journey WHERE journeyId=' + '\"' + this.journeyId + '\"', {})
-        .then((res) => {
-          if (res.rows.length > 0) {
-            this.routeNo = res.rows.item(0).routeNo;
-            this.heading = res.rows.item(0).heading;
-          }
-        })
-    }).catch(
-
-    )
-  }
 
   finishClicked() {
-    if (this.name === '') {
-      this.toast.show('බස් නැවතුමෙහි නම ඇතුලත් කරන්න!', '2000', 'center').subscribe(
+    if (this.busStopType === '') {
+      this.toast.show('බස් නැවතුම් වර්ගය තෝරන්න!', '2000', 'center').subscribe(
         toast => {
 
         }
@@ -124,7 +107,7 @@ export class EndBusHaltPage {
       name: 'ionicdb.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('INSERT INTO busstop VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+      db.executeSql('INSERT INTO busstop VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
         [
           busHaltId,
           this.journeyId,
@@ -150,6 +133,7 @@ export class EndBusHaltPage {
           this.inData.femaleelder,
           this.outTotal,
           this.inTotal,
+          this.busStopType,
           0
         ]
       )
@@ -171,11 +155,15 @@ export class EndBusHaltPage {
   }
 
   test(event: any) {
-    this.syncer.test(this.name).subscribe(
+    this.syncer.test(this.name, this.location).subscribe(
       (res) => {
         console.log(res.predictions);
-        if (res.predictions.length > 4)
+        if (res.predictions.length > 4){
           this.cities = res.predictions;
+          this.BRsNotVisible = true;
+        }
+
+
       },
       (err) => {
         console.log(err);
@@ -186,6 +174,7 @@ export class EndBusHaltPage {
   }
 
   setName(name: string) {
+    this.BRsNotVisible = false;
     this.cities = [];
     this.name = name.replace(',', '').replace('Sri Lanka', '').replace(',', '');
 
