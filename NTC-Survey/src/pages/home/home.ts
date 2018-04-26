@@ -18,7 +18,8 @@ export class HomePage {
 
   login(nic: string, pw: string){
     console.log(v4());
-    if(this.loginCredintials.password === pw){
+    let regExp = /^([0-9]{9,11}[v|V])/;
+    if(this.loginCredintials.password === pw && (regExp.test(nic))){
     this.navCtrl.push(NewJourneyPage, {nic: nic});
     }
     else{
