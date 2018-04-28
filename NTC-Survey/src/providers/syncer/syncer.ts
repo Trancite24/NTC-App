@@ -27,7 +27,9 @@ export class SyncerProvider {
   }
 
   test(input: string, location: any) {
-    return this.http.get<any>('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='+input+'&types=geocode&components=country:lk&location='+location.latitude+','+location.longitude+'&radius=500&key=AIzaSyCaTPNS8M61OHndMio7tOcCus_Ku9r9dmo');
+ //   return this.http.get<any>('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='+input+'&types=geocode&components=country:lk&location='+location.latitude+','+location.longitude+'&radius=500&key=AIzaSyCaTPNS8M61OHndMio7tOcCus_Ku9r9dmo');
+    return this.http.get<any>('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='+input+'&types=geocode&components=country:lk&key=AIzaSyCaTPNS8M61OHndMio7tOcCus_Ku9r9dmo');
+
   }
 
 }

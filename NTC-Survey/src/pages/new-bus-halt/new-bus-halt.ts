@@ -2,11 +2,13 @@ import {Platform} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {LoadingController} from 'ionic-angular';
+import {AlertController} from 'ionic-angular';
 
 import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Diagnostic } from '@ionic-native/diagnostic';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 import {GetDownPage} from '../get-down/get-down';
 import {NewJourneyPage} from '../new-journey/new-journey';
@@ -41,7 +43,9 @@ export class NewBusHaltPage {
     private toast: Toast,
     private geoLocation: Geolocation,
     private diagnostic: Diagnostic,
-    private syncer: SyncerProvider
+    private syncer: SyncerProvider,
+    private alertCtrl: AlertController,
+    private locationAccuracy: LocationAccuracy
   ) {
     this.journeyId = this.navParams.get('journeyId');
   }
@@ -49,7 +53,8 @@ export class NewBusHaltPage {
   ionViewDidLoad() {
     this.loadBusStopDta();
     this.loadJourneyData();
-    this.diagnostic.isGpsLocationEnabled().then(
+    this.enableHighAccuracyLocationMethod();
+    /*this.diagnostic.isGpsLocationEnabled().then(
       (enabled) =>{
         this.toast.show('GPS '+(enabled ? 'enabled' : 'disabled'), '5000', 'center').subscribe(
           (toast) => {
@@ -65,7 +70,22 @@ export class NewBusHaltPage {
           }
         );
       }
-    )
+    )*/
+  }
+
+  enableHighAccuracyLocationMethod(){
+    this.locationAccuracy.canRequest().then(
+      (canRequest: boolean) => {
+        if(canRequest){
+          this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
+            () => console.log('Request successful'),
+            error => {
+              this.diagnostic.switchToLocationSettings();
+            }
+          );
+        }
+      }
+    );
   }
 
   async getGoeLocation() {
@@ -91,14 +111,14 @@ export class NewBusHaltPage {
     }).catch(async (err) => {
       loader.dismiss();
       await this.toast.show('දත්ත ලබාගැනීම අසාර්ථකයි,\n' +
-        'GPS දත්ත නොමැතිව ඉදිරියට යෑම', '5000', 'center').subscribe(
+        'GPS දත්ත නොමැතිව ඉදිරියට යෑම', '3000', 'center').subscribe(
         (toast) => {
 
         }
       );
       setTimeout(() => {
         this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
-      }, 5000);
+      }, 3000);
 
 
     });
@@ -139,6 +159,30 @@ export class NewBusHaltPage {
   }
 
   async syncNow() {
+    let confirm = this.alertCtrl.create({
+      title: 'තහවුරු කරන්න',
+      message: 'චාරිකාව අවසාන කරන්නේද?',
+      buttons: [
+        {
+          text: 'ආපසු',
+          handler: () => {
+
+          }
+        },
+        {
+          text: 'ඔව්',
+          handler: () => {
+           this.yesSelected();
+          }
+        }
+      ]
+    });
+    confirm.present();
+
+
+  }
+
+  async yesSelected(){
     let loader = this.loadingCtrl.create({
       content: "ප්‍රධාන පද්ධතිය සමග යාවත්කාලීන කිරීම සිදුවෙමින් පවතීී..",
     });

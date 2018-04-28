@@ -1,4 +1,10 @@
 page-end-bus-halt {
+  ion-content .scroll-content {
+    overflow-y: hidden;
+  }
+  .scroll-content {
+    overflow: hidden;
+  }
   .route-no {
     font-size: 120%;
     font-style: normal;

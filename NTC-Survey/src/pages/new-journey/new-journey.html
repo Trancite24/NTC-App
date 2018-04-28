@@ -1,6 +1,6 @@
 <ion-content padding no-bounce>
 
-  <ion-grid>
+
     <ion-row justify-content-center align-items-center style="height: 10%">
       <ion-col col-8>
         <h4>අළුත් චාරිකාවක්</h4>
@@ -12,9 +12,9 @@
       </ion-col>
     </ion-row>
 
-    <ion-row justify-content-center align-items-center style="height: 90%">
+    <ion-row justify-content-center align-items-center style="height: 90%; width: 100%">
 
-      <form (ngSubmit)="insertJourneyDetails()">
+      <form (ngSubmit)="insertJourneyDetails()" style="height: 100%; width: 100%">
         <ion-item>
           <ion-label>දිනය</ion-label>
           <!--<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>-->
@@ -29,8 +29,8 @@
           <ion-option value="Income">Income</ion-option>
           <ion-option value="Expense">Expense</ion-option>-->
           <!--
-           </ion-select>-->
-          <ion-input type="text" placeholder="උදා:- 138,138/4" [(ngModel)]="data.routeNo" name="routeNo"
+           </ion-select> උදා:- 138,138/4 -->
+          <ion-input type="text" placeholder="" [(ngModel)]="data.routeNo" name="routeNo"
                      required=""></ion-input>
         </ion-item>
         <br>
@@ -83,7 +83,6 @@
 
       </form>
     </ion-row>
-  </ion-grid>
 
 </ion-content>
 

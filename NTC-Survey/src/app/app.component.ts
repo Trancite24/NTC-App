@@ -11,6 +11,7 @@ import {EndBusHaltPage} from "../pages/end-bus-halt/end-bus-halt";
 import {SyncLaterPage} from "../pages/sync-later/sync-later";*/
 
 import {Keyboard} from '@ionic-native/keyboard';
+import {Insomnia} from '@ionic-native/insomnia';
 
 import {HomePage} from '../pages/home/home';
 import { GetDownPage } from "../pages/get-down/get-down";
@@ -22,13 +23,21 @@ import {EndBusHaltPage} from "../pages/end-bus-halt/end-bus-halt";
 export class MyApp {
   rootPage: any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private keyboard: Keyboard, private alertCtrl: AlertController) {
+  constructor(
+    platform: Platform,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen,
+    private keyboard: Keyboard,
+    private alertCtrl: AlertController,
+    private insomnia: Insomnia
+  ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
       this.keyboard.disableScroll(false);
+      this.insomnia.keepAwake().then( () => {});
 
       platform.registerBackButtonAction(
         () => {

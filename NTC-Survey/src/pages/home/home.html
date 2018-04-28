@@ -1,25 +1,25 @@
-<ion-header>
+<ion-header style="background-color: #222831">
   <ion-navbar>
-    <ion-title>ඇතුළු වීම</ion-title>
+    <ion-title><span style="color: white">ඇතුළු වීම</span></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="main-content">
 
   <ion-grid style="height: 100%">
-    <ion-row justify-content-center align-items-center style="height: 100%">
-      <form (ngSubmit)="login(nicInput.value,pwinput.value)">
-      <ion-item>
-        <ion-label floating>හැදුනුම්පත් අංකය (NIC)</ion-label>
-        <ion-input #nicInput type="text"></ion-input>
+    <ion-row style="background-color: #222831" justify-content-center align-items-center style="height: 100%">
+      <form  (ngSubmit)="login(nicInput.value,pwinput.value)">
+      <ion-item style="background-color: #222831">
+        <ion-label style="color: white" floating>හැදුනුම්පත් අංකය (NIC)</ion-label>
+        <ion-input style="color: white" class="input-class" #nicInput type="text"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label floating>මුරපදය</ion-label>
-        <ion-input #pwinput type="password"></ion-input>
+      <ion-item style="background-color: #222831">
+        <ion-label style="color: white" floating>මුරපදය</ion-label>
+        <ion-input style="color: white" class="input-class" #pwinput type="password"></ion-input>
       </ion-item>
         <br><br>
-        <button ion-button block large type="submit">
-          <span><b>ඇතුල් වන්න</b></span></button>
+        <button ion-button style="background-color: #00ADB5" block large type="submit">
+          <span><b style="color: white">ඇතුල් වන්න</b></span></button>
       </form>
 
     </ion-row>

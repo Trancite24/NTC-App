@@ -73,6 +73,11 @@ export class EndBusHaltPage {
     else {
       /*this.inserDataToLocalDB();*/
       this.insertToLocalTable();
+      this.toast.show('සාර්ථකයි! ඊලග නැවතුමට..','1000','center').subscribe(
+        (toast) => {
+
+        }
+      );
       this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
     }
 

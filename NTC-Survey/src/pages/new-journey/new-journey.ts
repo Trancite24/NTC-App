@@ -136,7 +136,7 @@ export class NewJourneyPage {
       db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?,?,?)', [uuid, this.nic, this.data.date, this.data.routeNo, this.data.fromName, this.data.toName, this.data.door, Number(this.data.numberOfSeats), 0])
         .then(res => {
           console.log(res);
-          this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '4000', 'center').subscribe(
+          this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '2000', 'center').subscribe(
             toast => {
 
 
@@ -145,7 +145,7 @@ export class NewJourneyPage {
           setTimeout(() => {
               this.navCtrl.push(NewBusHaltPage, {journeyId: uuid});
             }
-            , 4000);
+            , 2000);
         })
         .catch(e => {
           console.log(e);

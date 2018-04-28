@@ -14,23 +14,23 @@
 <ion-content padding>
   <form (ngSubmit)="finishClicked()" style="height: 100%">
 
-    <ion-row padding-top align-items-center style="height: 40%; width: 100%">
+    <ion-row padding-top align-items-center style="height: 50%; width: 100%">
       <ion-col col-12>
-        <ion-list radio-group [(ngModel)]="busStopType" name="busStoptype">
+        <ion-list radio-group  [(ngModel)]="busStopType" name="busStoptype">
           <ion-item>
-            <ion-label>Terminal/Stand</ion-label>
+            <ion-label style="font-size: 80%">Terminal/Stand</ion-label>
             <ion-radio text-right value="terminal"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label>Sheltered</ion-label>
+            <ion-label style="font-size: 80%">Sheltered</ion-label>
             <ion-radio value="sheltered"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label>Bus Stop Sign</ion-label>
+            <ion-label style="font-size: 80%">Bus Stop Sign</ion-label>
             <ion-radio value="busstopsign"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label>None</ion-label>
+            <ion-label style="font-size: 80%">None</ion-label>
             <ion-radio value="none"></ion-radio>
           </ion-item>
         </ion-list>
@@ -38,19 +38,19 @@
 
     </ion-row>
 
-    <ion-row justify-content-center align-items-start style="height: 10%">
+    <ion-row justify-content-center align-items-end style="height: 20%">
       <ion-item>
         <ion-label>නම</ion-label>
         <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-        <ion-input text-right type="text" placeholder="" style="font-size: 80%;" (ionChange)="test($event)" [(ngModel)]="name" name="description" required=""></ion-input>
+        <ion-input text-right type="text" placeholder="" style="font-size: 100%;" (ionChange)="test($event)" [(ngModel)]="name" name="description" required=""></ion-input>
 
       </ion-item>
     </ion-row>
-    <ion-item-sliding  *ngFor="let city of cities; let i=index"  style="height: 8%">
+   <!-- <ion-item-sliding  *ngFor="let city of cities; let i=index"  style="height: 8%">
       <ion-item nopadding style="font-size: 80%" (click)="setName(city.description)">
         {{city.description}}
       </ion-item>
-    </ion-item-sliding>
+    </ion-item-sliding>-->
 
 
     <!--<ion-row padding justify-content-center align-items-center style="height: 20%">
@@ -75,7 +75,8 @@
       </ion-col>
     </ion-row>-->
 
-<div *ngIf="!BRsNotVisible" style="height: 40%"></div>
+   <!-- <div *ngIf="!BRsNotVisible" style="height: 20%"></div>-->
+    <div style="height: 20%"></div>
     <ion-row justify-content-center align-items-end align-self-end style="height: 10%">
       <button ion-button type="submit" round full><b>දත්ත ඇතුලත් කරන්න</b></button>
     </ion-row>

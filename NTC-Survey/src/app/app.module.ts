@@ -21,6 +21,8 @@ import {Keyboard} from '@ionic-native/keyboard';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Vibration } from '@ionic-native/vibration';
 import { Diagnostic } from '@ionic-native/diagnostic';
+import { Insomnia } from '@ionic-native/insomnia';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 import { SyncerProvider } from '../providers/syncer/syncer';
 
@@ -61,7 +63,9 @@ import { SyncerProvider } from '../providers/syncer/syncer';
     Keyboard,
     SyncerProvider,
     HttpClient,
-    Diagnostic
+    Diagnostic,
+    Insomnia,
+    LocationAccuracy,
   ]
 })
 export class AppModule {}
