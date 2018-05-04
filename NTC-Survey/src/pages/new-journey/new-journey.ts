@@ -45,12 +45,12 @@ export class NewJourneyPage {
   }
 
   ionViewDidLoad() {
-    this.createJourneyTable();
-    this.createBusStopTable();
+  //  this.createJourneyTable();
+  //  this.createBusStopTable();
   }
 
 
-  createJourneyTable() {
+  /* createJourneyTable() {
     this.sqlite.create(
       {
         name: 'ionicdb.db',
@@ -87,7 +87,7 @@ export class NewJourneyPage {
           console.log(e);
         });
     });
-  }
+  } */
 
   insertJourneyDetails() {
     if (this.data.date === '' || this.data.routeNo === '' || this.data.fromName === '' || this.data.toName === '' || this.data.door === '' || Number(this.data.numberOfSeats) < 7) {
@@ -133,7 +133,7 @@ export class NewJourneyPage {
       location: 'default'
     }).then((db: SQLiteObject) => {
       const uuid = v4();
-      db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?,?,?)', [uuid, this.nic, this.data.date, this.data.routeNo, this.data.fromName, this.data.toName, this.data.door, Number(this.data.numberOfSeats), 0])
+      db.executeSql('INSERT INTO journey VALUES(?,?,?,?,?,?,?,?,?,?)', [uuid, this.nic, this.data.date, this.data.routeNo, this.data.fromName, this.data.toName, this.data.door, Number(this.data.numberOfSeats), 0, 1])
         .then(res => {
           console.log(res);
           this.toast.show('චාරිකාවේ දත්ත සටහන් කරගන්නා ලදී', '2000', 'center').subscribe(
@@ -143,7 +143,7 @@ export class NewJourneyPage {
             }
           );
           setTimeout(() => {
-              this.navCtrl.push(NewBusHaltPage, {journeyId: uuid});
+              this.navCtrl.push(NewBusHaltPage, {journeyId: uuid, nic: this.nic});
             }
             , 2000);
         })

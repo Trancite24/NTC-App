@@ -1,13 +1,13 @@
-<ion-content padding no-bounce>
+<ion-content padding no-bounce class="main-content">
 
 
     <ion-row justify-content-center align-items-center style="height: 10%">
       <ion-col col-8>
-        <h4>අළුත් චාරිකාවක්</h4>
+        <h4 style="color: white">අළුත් චාරිකාවක්</h4>
       </ion-col>
       <ion-col col-4 style="text-align: right">
-        <button ion-button color="secondary" (click)="pushToSyncLater()">
-          <ion-icon name="send"></ion-icon>
+        <button ion-button color="secondary" style="background-color: #EEEEEE" (click)="pushToSyncLater()">
+          <ion-icon style="color: #00ADB5" name="send"></ion-icon>
         </button>
       </ion-col>
     </ion-row>
@@ -15,41 +15,41 @@
     <ion-row justify-content-center align-items-center style="height: 90%; width: 100%">
 
       <form (ngSubmit)="insertJourneyDetails()" style="height: 100%; width: 100%">
-        <ion-item>
-          <ion-label>දිනය</ion-label>
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white">දිනය</ion-label>
           <!--<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>-->
-          <ion-datetime displayFormat="DD/MM/YYYY" placeholder={{data.date}} [(ngModel)]="data.date" name="date"
+          <ion-datetime class="datetime-pl" displayFormat="DD/MM/YYYY" placeholder={{data.date}} [(ngModel)]="data.date" name="date"
                         required=""></ion-datetime>
         </ion-item>
         <br>
-        <ion-item>
-          <ion-label><h2>මාර්ග අංකය</h2></ion-label>
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white">මාර්ග අංකය</ion-label>
           <!-- <ion-select [(ngModel)]="data.type" name="type" required="">-->
           <!--<ion-select  name="type" required="">
           <ion-option value="Income">Income</ion-option>
           <ion-option value="Expense">Expense</ion-option>-->
           <!--
            </ion-select> උදා:- 138,138/4 -->
-          <ion-input type="text" placeholder="" [(ngModel)]="data.routeNo" name="routeNo"
+          <ion-input style="color: white" type="text" placeholder="" [(ngModel)]="data.routeNo" name="routeNo"
                      required=""></ion-input>
         </ion-item>
         <br>
-        <ion-item>
-          <ion-label>සිට</ion-label>
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white">සිට</ion-label>
           <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-          <ion-input type="text" placeholder="" [(ngModel)]="data.fromName" name="from" required=""></ion-input>
+          <ion-input style="color: white" type="text" placeholder="" [(ngModel)]="data.fromName" name="from" required=""></ion-input>
         </ion-item>
         <br>
-        <ion-item>
-          <ion-label>දෙසට</ion-label>
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white">දෙසට</ion-label>
           <!--<ion-input type="text" placeholder="Description" [(ngModel)]="data.description" name="description" required="" ></ion-input>-->
-          <ion-input type="text" float="right" placeholder="" [(ngModel)]="data.toName" name="to"
+          <ion-input style="color: white" type="text" float="right" placeholder="" [(ngModel)]="data.toName" name="to"
                      required=""></ion-input>
         </ion-item>
         <br>
-        <ion-item>
-          <ion-label>දොර</ion-label>
-          <ion-select [(ngModel)]="data.door" name="type" required="">
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white">දොර</ion-label>
+          <ion-select style="color: white" [(ngModel)]="data.door" name="type" required="" >
             <ion-option value="front">ඉදිරිපස</ion-option>
             <ion-option value="back">පසුපස</ion-option>
             <ion-option value="middle">මැද</ion-option>
@@ -71,14 +71,14 @@
           </ion-list>-->
         </ion-item>
         <br>
-        <ion-item>
-          <ion-label>ආසන ගණන</ion-label>
-          <ion-input type="number" float="right" placeholder=" " [(ngModel)]="data.numberOfSeats" name="seats"
+        <ion-item style="background-color: #222831">
+          <ion-label style="color: white" >ආසන ගණන</ion-label>
+          <ion-input style="color: white" type="number" float="right" placeholder=" " [(ngModel)]="data.numberOfSeats" name="seats"
                      required=""></ion-input>
         </ion-item>
 
         <br>
-        <button ion-button type="submit" block large><b>ගමන අරඹන්න</b></button>
+        <button ion-button type="submit" block large style="background-color: #00ADB5"><b>ගමන අරඹන්න</b></button>
 
 
       </form>

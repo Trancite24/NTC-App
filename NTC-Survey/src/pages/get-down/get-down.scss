@@ -1,5 +1,11 @@
 page-get-down {
+  .toolbar-background {
+    background-color: #222831;
+  }
+  .main-content{
+    background-color: #222831;
 
+  }
   .age-group-content {
 
   }
@@ -10,10 +16,11 @@ page-get-down {
   }
   .count-text {
     border-radius: 5px;
-    background-color: #E0E0E0;
+    background-color: #393E46;
     font-size: 130%;
     font-family: 'AvenirNextLTPro-Regular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     font-style: normal;
+    color: white;
   }
   .total-count {
     font-size: 100%;

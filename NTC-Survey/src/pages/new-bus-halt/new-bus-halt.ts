@@ -33,6 +33,7 @@ export class NewBusHaltPage {
   journeyId: string;
   busStopData: any = [];
   journey: any;
+  nic: string;
 
   constructor(
     public platform: Platform,
@@ -48,6 +49,7 @@ export class NewBusHaltPage {
     private locationAccuracy: LocationAccuracy
   ) {
     this.journeyId = this.navParams.get('journeyId');
+    this.nic = this.navParams.get('nic');
   }
 
   ionViewDidLoad() {
@@ -98,15 +100,15 @@ export class NewBusHaltPage {
       this.location.longitude = res.coords.longitude;
       this.location.latitude = res.coords.latitude;
       loader.dismiss();
-      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි', '2000', 'center').subscribe(
+      await this.toast.show('දත්ත ලබාගැනීම සාර්ථකයි', '1000', 'center').subscribe(
         (toast) => {
 
         }
       );
       setTimeout(() => {
         let timeStamp = new Date().getTime().toString();
-        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location, timeStamp: timeStamp});
-      }, 2100);
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location, timeStamp: timeStamp, nic: this.nic});
+      }, 1000);
 
     }).catch(async (err) => {
       loader.dismiss();
@@ -117,7 +119,8 @@ export class NewBusHaltPage {
         }
       );
       setTimeout(() => {
-        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location});
+        let timeStamp = new Date().getTime().toString();
+        this.navCtrl.push(GetDownPage, {journeyId: this.journeyId, location: this.location, timeStamp: timeStamp, nic: this.nic});
       }, 3000);
 
 
@@ -187,17 +190,42 @@ export class NewBusHaltPage {
       content: "ප්‍රධාන පද්ධතිය සමග යාවත්කාලීන කිරීම සිදුවෙමින් පවතීී..",
     });
     loader.present();
+
+
+    this.sqlite.create({
+      name: 'ionicdb.db',
+      location: 'default'
+    }).then(
+      (db: SQLiteObject) => {
+        db.executeSql('UPDATE journey SET ongoing=? WHERE journeyId=?', [0, this.journeyId])
+          .then((res) => {
+
+          })
+          .catch(e => {
+            console.log(e);
+            this.toast.show(e.message, '5000', 'center').subscribe(
+              (toast) => {
+
+              }
+            );
+          });
+      }
+    );
     await this.busStopRequest().then(
+
+
       async (res) => {
         await this.journeyRequest().then(
+
           (resp) => {
+
             this.toast.show('සාර්ථකයි!', '3000', 'center').subscribe(
               (toast) => {
 
               }
             );
             setTimeout(() => {
-              this.navCtrl.push(NewJourneyPage);
+              this.navCtrl.push(NewJourneyPage, {nic: this.nic});
             }, 3100);
           },
           (error) => {
@@ -207,7 +235,7 @@ export class NewBusHaltPage {
               }
             );
             setTimeout(() => {
-              this.navCtrl.push(NewJourneyPage);
+              this.navCtrl.push(NewJourneyPage, {nic: this.nic});
             }, 3100);
           }
         )
@@ -220,7 +248,7 @@ export class NewBusHaltPage {
           }
         );
         setTimeout(() => {
-          this.navCtrl.push(NewJourneyPage);
+          this.navCtrl.push(NewJourneyPage, {nic: this.nic});
         }, 3100);
       }
     );

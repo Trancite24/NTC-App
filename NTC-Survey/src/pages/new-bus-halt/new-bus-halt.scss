@@ -1,12 +1,21 @@
 page-new-bus-halt {
+  .toolbar-background {
+    background-color: #222831;
+  }
+  .main-content{
+    background-color: #222831;
+
+  }
   .button.customBtnGPS{
     width:100%;
     height: 100%;
+    background-color: #00ADB5;
 
   }
   .button.customBtnEnd{
     width:100%;
     height: 10%;
+    background-color: #EEEEEE;
 
   }
   ion-content .scroll-content {

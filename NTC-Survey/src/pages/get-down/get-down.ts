@@ -24,6 +24,7 @@ import { EndBusHaltPage } from '../end-bus-halt/end-bus-halt';
 export class GetDownPage {
 
   journeyId: string;
+  nic: string;
   location: any;
   timeStamp: string;
   outData: any = {
@@ -76,6 +77,7 @@ export class GetDownPage {
     this.journeyId = this.navParams.get('journeyId');
     this.location = this.navParams.get('location');
     this.timeStamp = this.navParams.get('timeStamp');
+    this.nic = this.navParams.get('nic');
 
   }
 
@@ -293,7 +295,8 @@ export class GetDownPage {
               outData: this.outData,
               inData: this.inData,
               outTotal: this.outTotal,
-              inTotal: this.inTotal
+              inTotal: this.inTotal,
+              nic: this.nic
             });
           }
         }

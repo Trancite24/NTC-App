@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar [hideBackButton]="true">
-    <ion-title>නව බස් නැවතුම</ion-title>
+    <ion-title><span style="color: white">නව බස් නැවතුම</span></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="main-content">
   <!--<ion-list>
     <ion-item-sliding *ngFor="let journey of journies; let i=index">
       <ion-item nopadding>
@@ -36,7 +36,7 @@
    <!-- <div>
       {{journey | json }}
     </div>-->
-    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()"><b>GPS ඛණ්ඩාංක ගන්න</b></button>
+    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()"><b style="color: white">GPS ඛණ්ඩාංක ගන්න</b></button>
     <!--<div *ngIf="location">
       <h2>Your location is:</h2>
       <p>Lon: {{ location.longitude }}</p>
@@ -48,7 +48,7 @@
   </ion-row>
 
   <ion-row justify-content-end align-items-end style="height: 80%">
-    <button  class="button button-dark customBtnEnd" (click)="syncNow()" ion-button round><b>ගමන අවසන් කරන්න</b></button>
+    <button  class="button button-dark customBtnEnd" (click)="syncNow()" ion-button round><b style="color: #222831">ගමන අවසන් කරන්න</b></button>
   </ion-row>
 
 

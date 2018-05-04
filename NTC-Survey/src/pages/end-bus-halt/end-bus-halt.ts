@@ -22,6 +22,7 @@ import {SyncerProvider} from "../../providers/syncer/syncer";
 export class EndBusHaltPage {
 
   journeyId: string;
+  nic: string;
   location: any;
   timeStamp: string;
   name: string = ' ';
@@ -53,6 +54,7 @@ export class EndBusHaltPage {
     this.inData = this.navParams.get('inData');
     this.outTotal = this.navParams.get('outTotal');
     this.inTotal = this.navParams.get('inTotal');
+    this.nic = this.navParams.get('nic');
 
   }
 
@@ -78,7 +80,7 @@ export class EndBusHaltPage {
 
         }
       );
-      this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId});
+      this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId, nic: this.nic});
     }
 
   }

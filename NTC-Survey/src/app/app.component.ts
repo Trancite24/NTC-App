@@ -14,8 +14,6 @@ import {Keyboard} from '@ionic-native/keyboard';
 import {Insomnia} from '@ionic-native/insomnia';
 
 import {HomePage} from '../pages/home/home';
-import { GetDownPage } from "../pages/get-down/get-down";
-import {EndBusHaltPage} from "../pages/end-bus-halt/end-bus-halt";
 
 @Component({
   templateUrl: 'app.html'

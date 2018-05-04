@@ -8,10 +8,10 @@
   <ion-toolbar>
     <ion-segment [(ngModel)]="status">
       <ion-segment-button value="out">
-        <h5>පිටවීම</h5>
+        <h5 style="color: white">පිටවීම</h5>
       </ion-segment-button>
       <ion-segment-button value="in">
-        <h5>ඇතුළුවීම</h5>
+        <h5 style="color: white">ඇතුළුවීම</h5>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -19,7 +19,7 @@
 </ion-header>
 
 
-<ion-content padding [ngSwitch]="status">
+<ion-content padding [ngSwitch]="status" class="main-content">
 
   <ion-grid *ngSwitchCase="'out'" style="height: 100%" ion-fixed>
     <ion-row text-center justify-content-center align-items-center style="height: 46%">
@@ -140,14 +140,13 @@
              (swipe)="countDown('out','femaleelder')">
       </ion-col>
     </ion-row>-->
-    <ion-item-divider></ion-item-divider>
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
-      <ion-col class="age-group-content" col-3>
+      <ion-col class="age-group-content" col-3 style="color: white">
         එකතුව
         <div class="total-count">{{outTotal || 0}}</div>
       </ion-col>
       <ion-col class="age-group-content" col-9>
-        <button ion-button round (click)="dataEnterFinshed()"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
+        <button ion-button round (click)="dataEnterFinshed()" style="background-color: #00ADB5"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -267,14 +266,14 @@
              (swipe)="countDown('in','femaleelder')">
       </ion-col>
     </ion-row>-->
-    <ion-item-divider></ion-item-divider>
+
     <ion-row text-center justify-content-center align-items-center style="height: 15%">
-      <ion-col class="age-group-content" col-3>
+      <ion-col class="age-group-content" col-3 style="color: white">
         එකතුව
         <div class="total-count">{{inTotal || 0}}</div>
       </ion-col>
       <ion-col class="age-group-content" col-9>
-        <button ion-button round (click)="dataEnterFinshed()"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
+        <button ion-button round (click)="dataEnterFinshed()" style="background-color: #00ADB5"><b>දත්ත ඇතුලත් කිරීම අවසන්</b></button>
       </ion-col>
     </ion-row>
 
