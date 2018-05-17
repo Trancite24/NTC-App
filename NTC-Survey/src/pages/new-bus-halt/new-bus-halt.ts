@@ -48,11 +48,12 @@ export class NewBusHaltPage {
     private alertCtrl: AlertController,
     private locationAccuracy: LocationAccuracy
   ) {
-    this.journeyId = this.navParams.get('journeyId');
-    this.nic = this.navParams.get('nic');
+
   }
 
   ionViewDidLoad() {
+    this.journeyId = this.navParams.get('journeyId');
+    this.nic = this.navParams.get('nic');
     this.loadBusStopDta();
     this.loadJourneyData();
     this.enableHighAccuracyLocationMethod();

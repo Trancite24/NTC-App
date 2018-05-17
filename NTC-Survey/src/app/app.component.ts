@@ -14,6 +14,7 @@ import {Keyboard} from '@ionic-native/keyboard';
 import {Insomnia} from '@ionic-native/insomnia';
 
 import {HomePage} from '../pages/home/home';
+import {NewBusHaltPage} from "../pages/new-bus-halt/new-bus-halt";
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +36,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       this.keyboard.disableScroll(false);
-      this.insomnia.keepAwake().then( () => {});
+      //this.insomnia.keepAwake().then( () => {});
 
       platform.registerBackButtonAction(
         () => {

@@ -47,6 +47,12 @@ export class EndBusHaltPage {
     console.log(this.navParams.get('inData'));
     console.log(this.navParams.get('outTotal'));
     console.log(this.navParams.get('inTotal'));
+
+
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad EndBusHaltPage');
     this.journeyId = this.navParams.get('journeyId');
     this.location = this.navParams.get('location');
     this.timeStamp = this.navParams.get('timeStamp');
@@ -55,11 +61,6 @@ export class EndBusHaltPage {
     this.outTotal = this.navParams.get('outTotal');
     this.inTotal = this.navParams.get('inTotal');
     this.nic = this.navParams.get('nic');
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EndBusHaltPage');
 
   }
 

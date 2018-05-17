@@ -15,7 +15,7 @@ import {Toast} from '@ionic-native/toast';
 })
 export class HomePage {
 
-  ongoingJourney = {ongoing: 0, journeyId: ''};
+  ongoingJourney = {ongoing: 0, journeyId: '', nic: ''};
   loginCredintials = {nic: '', password: '1234'};
 
   constructor(
@@ -118,7 +118,7 @@ export class HomePage {
         setTimeout(() => {
 
         }, 3000)
-        this.navCtrl.push(NewBusHaltPage, {journeyId: this.ongoingJourney.journeyId})
+        this.navCtrl.push(NewBusHaltPage, {journeyId: this.ongoingJourney.journeyId, nic: this.ongoingJourney.nic})
       }
       else {
         this.navCtrl.push(NewJourneyPage, {nic: nic});

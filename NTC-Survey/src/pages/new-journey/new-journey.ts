@@ -41,12 +41,13 @@ export class NewJourneyPage {
     private toast: Toast
   ) {
     this.data.date = new Date().toLocaleDateString('en-GB');
-    this.nic = this.navParams.get('nic');
+
   }
 
   ionViewDidLoad() {
   //  this.createJourneyTable();
   //  this.createBusStopTable();
+    this.nic = this.navParams.get('nic');
   }
 
 

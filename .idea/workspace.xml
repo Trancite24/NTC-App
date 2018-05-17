@@ -88,14 +88,10 @@
       <change afterPath="$PROJECT_DIR$/NTC-Survey/tsconfig.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/NTC-Survey/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.html" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.scss" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.html" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.scss" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.html" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.scss" beforeDir="false" afterPath="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -112,8 +108,8 @@
       <file leaf-file-name="end-bus-halt.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1255">
-              <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+            <state relative-caret-position="432">
+              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -121,14 +117,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="107" column="44" lean-forward="true" selection-start-line="107" selection-start-column="44" selection-end-line="107" selection-end-column="44" />
+            <state relative-caret-position="1894">
+              <caret line="120" column="33" lean-forward="true" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="34" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get-down.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -136,11 +141,13 @@
       <file leaf-file-name="new-bus-halt.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="50" column="114" selection-start-line="50" selection-start-column="114" selection-end-line="50" selection-end-column="114" />
+            <state relative-caret-position="663">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#ion-title#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -150,8 +157,8 @@
       <file leaf-file-name="new-bus-halt.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="260" column="45" lean-forward="true" selection-start-line="260" selection-start-column="45" selection-end-line="260" selection-end-column="45" />
+            <state relative-caret-position="272">
+              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -159,11 +166,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new-bus-halt.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="23" />
+            <state relative-caret-position="630">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
                 <element signature="e#497#545#0" expanded="true" />
@@ -172,20 +188,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get-down.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4947">
-              <caret line="299" column="15" selection-start-line="299" selection-start-column="15" selection-end-line="299" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="2" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="119">
+              <caret line="33" selection-start-line="33" selection-end-line="37" selection-end-column="19" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -193,32 +200,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sync-later.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/sync-later/sync-later.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1241">
-              <caret line="53" column="25" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="syncer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/providers/syncer/syncer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="30" column="143" selection-start-line="30" selection-start-column="143" selection-end-line="30" selection-end-column="143" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new-journey.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="165" column="7" selection-start-line="164" selection-start-column="8" selection-end-line="166" selection-end-column="3" />
+            <state relative-caret-position="653">
+              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sync-later.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/sync-later/sync-later.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3886">
+              <caret line="53" column="25" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -269,20 +267,20 @@
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.scss" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.html" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.html" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.scss" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.html" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.scss" />
         <option value="$PROJECT_DIR$/NTC-Survey/config.xml" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.ts" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.ts" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.ts" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.ts" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/NTC-Survey/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.ts" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.ts" />
+        <option value="$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.ts" />
       </list>
     </option>
   </component>
@@ -299,7 +297,7 @@
     <handled-path value="$PROJECT_DIR$/NTC-Survey/plugins/cordova.plugins.diagnostic/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-254" />
+    <option name="x" value="329" />
     <option name="y" value="-8" />
     <option name="width" value="922" />
     <option name="height" value="700" />
@@ -427,7 +425,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="excluded.www.directory" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="D:/Nisal Waduge/99X/TPIP/tpip" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -489,19 +487,22 @@
       <workItem from="1524769855472" duration="2344000" />
       <workItem from="1524899317208" duration="2174000" />
       <workItem from="1524940054234" duration="11308000" />
-      <workItem from="1525418302678" duration="11821000" />
+      <workItem from="1525418302678" duration="11997000" />
+      <workItem from="1525592675042" duration="3566000" />
+      <workItem from="1525643132634" duration="714000" />
+      <workItem from="1526325703473" duration="2068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269046000" />
+    <option name="totallyTimeSpent" value="275570000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.29868227" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21015625" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.3290938" />
@@ -520,10 +521,10 @@
       <window_info anchor="bottom" id="Find" order="6" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22181553" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -531,12 +532,12 @@
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
       <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.3290938" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" />
       <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -754,32 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#ion-col#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#ion-col#1;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#button#0;n#ion-col#1;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#0;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#1;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#1;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#1;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#2;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#2;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#2;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#3;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#3;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#3;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#4;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#4;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-select#0;n#ion-item#4;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#5;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#5;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#5;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,27 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#ion-title#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#0;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#0;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#1;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#1;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#1;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#span#0;n#button#0;n#form#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -829,27 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#ion-title#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#1;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#1;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#2;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#2;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#3;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#3;n#ion-list#0;n#ion-col#0;n#ion-row#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-row#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-item#0;n#ion-row#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#ion-row#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-input#0;n#ion-item#0;n#ion-row#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-row#2;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#ion-row#2;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#2;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,22 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#h5#0;n#ion-segment-button#0;n#ion-segment#0;n#ion-toolbar#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#ion-segment-button#1;n#ion-segment#0;n#ion-toolbar#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#0;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#1;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#0;n#ion-row#1;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#1;n#ion-row#1;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-col#0;n#ion-row#2;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#ion-col#1;n#ion-row#2;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#0;n#ion-row#0;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#1;n#ion-row#0;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#0;n#ion-row#1;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#ion-row#1;n#ion-col#1;n#ion-row#1;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-col#0;n#ion-row#2;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#ion-col#1;n#ion-row#2;n#ion-grid#1;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,45 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="50" column="114" selection-start-line="50" selection-start-column="114" selection-end-line="50" selection-end-column="114" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#ion-title#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="2" selection-end-line="37" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4947">
-          <caret line="299" column="15" selection-start-line="299" selection-start-column="15" selection-end-line="299" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/sync-later/sync-later.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NTC-Survey/src/providers/syncer/syncer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -950,20 +828,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.ts">
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="165" column="7" selection-start-line="164" selection-start-column="8" selection-end-line="166" selection-end-column="3" />
+        <state>
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="33" selection-start-line="33" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#ion-title#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#button#0;n#ion-row#1;n#ion-content#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NTC-Survey/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="23" />
+        <state relative-caret-position="630">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
             <element signature="e#497#545#0" expanded="true" />
@@ -971,33 +879,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.ts">
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1255">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        <state relative-caret-position="1894">
+          <caret line="120" column="33" lean-forward="true" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="34" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/end-bus-halt/end-bus-halt.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/get-down/get-down.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-bus-halt/new-bus-halt.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="260" column="45" lean-forward="true" selection-start-line="260" selection-start-column="45" selection-end-line="260" selection-end-column="45" />
+        <state relative-caret-position="272">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/home/home.ts">
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/new-journey/new-journey.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="107" column="44" lean-forward="true" selection-start-line="107" selection-start-column="44" selection-end-line="107" selection-end-column="44" />
+        <state relative-caret-position="653">
+          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NTC-Survey/src/pages/sync-later/sync-later.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3886">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="29" />
         </state>
       </provider>
     </entry>

@@ -31,12 +31,13 @@
     </ion-item-sliding>
   </ion-list>-->
 
-  <ion-row justify-content-center align-items-center style="height: 20%">
+  <ion-row justify-content-center align-items-center style="height: 80%">
     <br><br><br><br>
    <!-- <div>
       {{journey | json }}
     </div>-->
-    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()"><b style="color: white">GPS ඛණ්ඩාංක ගන්න</b></button>
+    <button class="button button-dark customBtnGPS" ion-button large color="secondary" (click)="getGoeLocation()"><b style="color: white">GPS
+      <br>ඛණ්ඩාංක ගන්න</b></button>
     <!--<div *ngIf="location">
       <h2>Your location is:</h2>
       <p>Lon: {{ location.longitude }}</p>
@@ -47,7 +48,7 @@
     </div>-->
   </ion-row>
 
-  <ion-row justify-content-end align-items-end style="height: 80%">
+  <ion-row justify-content-end align-items-end style="height: 20%">
     <button  class="button button-dark customBtnEnd" (click)="syncNow()" ion-button round><b style="color: #222831">ගමන අවසන් කරන්න</b></button>
   </ion-row>
 
