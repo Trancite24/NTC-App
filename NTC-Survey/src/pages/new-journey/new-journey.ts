@@ -1,3 +1,4 @@
+﻿
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {AlertController} from 'ionic-angular';
@@ -41,7 +42,7 @@ export class NewJourneyPage {
     private toast: Toast
   ) {
     this.data.date = new Date().toLocaleDateString('en-GB');
-    this.shortId = shortid.generate();
+    this.shortId = shortid.generate().toLowerCase();
 
   }
 
@@ -92,7 +93,7 @@ export class NewJourneyPage {
   } */
 
   insertJourneyDetails() {
-    if (this.data.date === '' || this.data.routeNo === '' || this.data.fromName === '' || this.data.toName === '' || this.data.door === '' || Number(this.data.numberOfSeats) < 7 || shortid.isValid(this.shortId)) {
+    if (this.data.date === '' || this.data.routeNo === '' || this.data.fromName === '' || this.data.toName === '' || this.data.door === '' || Number(this.data.numberOfSeats) < 7 || !shortid.isValid(this.shortId)) {
       this.toast.show('දත්ත සියල්ල නිසියාකාරව ඇතුල් කරන්න!', '2000', 'center').subscribe(
         toast => {
 
