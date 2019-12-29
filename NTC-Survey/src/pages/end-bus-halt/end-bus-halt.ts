@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+﻿import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-
+import {AlertController} from 'ionic-angular';
 import {SQLiteObject, SQLite} from '@ionic-native/sqlite';
 import {NewBusHaltPage} from "../new-bus-halt/new-bus-halt";
 import {Toast} from '@ionic-native/toast';
@@ -38,6 +38,7 @@ export class EndBusHaltPage {
 
   constructor(
     public navCtrl: NavController,
+    public alertCtrl: AlertController,
     public navParams: NavParams,
     private sqlite: SQLite,
     private toast: Toast,
@@ -75,6 +76,21 @@ export class EndBusHaltPage {
     }
     else {
       /*this.inserDataToLocalDB();*/
+      let confirm = this.alertCtrl.create({
+        title: 'තහවුරු කරන්න',
+        message: 'ඇතුළුවීම් එකතුව : ' + this.navParams.get('inTotal') + '<br>' +
+                                             'පිටවීම් එකතුව : ' + this.navParams.get('outTotal') ,
+        buttons: [
+          {
+            text: 'ආපසු',
+            handler: () => {
+
+            }
+          },
+          {
+            text: 'ඔව්',
+            handler: () => {
+              
       this.insertToLocalTable();
       this.toast.show('සාර්ථකයි! ඊලග නැවතුමට..','1000','center').subscribe(
         (toast) => {
@@ -82,6 +98,13 @@ export class EndBusHaltPage {
         }
       );
       this.navCtrl.push(NewBusHaltPage, {journeyId: this.journeyId, nic: this.nic});
+            }
+          }
+        ]
+      });
+      confirm.present();
+
+
     }
 
   }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+﻿import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Platform} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
@@ -7,6 +7,7 @@ import {Toast} from '@ionic-native/toast';
 import {Vibration} from '@ionic-native/vibration';
 
 import { EndBusHaltPage } from '../end-bus-halt/end-bus-halt';
+import { NewBusHaltPage } from '../new-bus-halt/new-bus-halt';
 
 
 /**
@@ -303,6 +304,14 @@ export class GetDownPage {
       ]
     });
     confirm.present();
+  }
+
+  goBack(){
+    this.navCtrl.push(NewBusHaltPage,{
+     journeyId: this.journeyId,
+     timeStamp: this.timeStamp,
+     nic: this.nic
+    });
   }
 
 }

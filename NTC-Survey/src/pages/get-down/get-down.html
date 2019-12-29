@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Generated template for the GetDownPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -6,6 +6,11 @@
 -->
 <ion-header>
   <ion-toolbar>
+     <ion-buttons slot="start">
+     <button ion-button size="small" (click)="goBack()">
+              < ආපසු
+     </button>
+     </ion-buttons>
     <ion-segment [(ngModel)]="status">
       <ion-segment-button value="out">
         <h5 style="color: white">පිටවීම</h5>

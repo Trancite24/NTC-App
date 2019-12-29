@@ -31,11 +31,11 @@ import { SyncerProvider } from '../providers/syncer/syncer';
   declarations: [
     MyApp,
     HomePage,
-  /*  NewJourneyPage,
+    /* NewJourneyPage,
     NewBusHaltPage,
     GetDownPage,
     EndBusHaltPage,
-    SyncLaterPage*/
+    SyncLaterPage */
   ],
   imports: [
     BrowserModule,
