@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/node": "^8.0.53",
     "serverless-dynamodb-local": "^0.2.26",
-    "serverless-offline": "^3.16.0",
+    "serverless-offline": "^12.0.3",
     "serverless-webpack": "^3.0.0",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.2",
